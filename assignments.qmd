@@ -1,7 +1,11 @@
 ---
-title: "My Assignments"
+title: "Assignments"
+format: html
 ---
+##Assignments 
 
-On this page, I showcase the assignment I conducted for the \[term and year, e.g. Spring 2024-2025\] EMU660 Decision Making with Analytics course.
+Below are my assignments.
 
-Please use left menu to navigate through my assignments.
+-[Assignment 1](assignment-1.html)
+
+-[Assignment 2](assignment-2.html)

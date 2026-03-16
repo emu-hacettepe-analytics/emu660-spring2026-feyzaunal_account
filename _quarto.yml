@@ -3,53 +3,24 @@ project:
   output-dir: docs
 
 website:
-  title: "[Student xxxx]'s Analytics Lab"
+  title: "EMU660 - Feyza Ünal"
   navbar:
-    search: true
     left:
-      - text: Home
-        href: index.qmd
-      - text: About Me
-        href: about.qmd
-      - text: My Posts
-        href: posts.qmd
-      - text: "EMU660 Coursework"
-        menu:
-          - text: Assignments
-            href: assignments.qmd
-          - text: Project
-            href: project.qmd
-            
-    tools:
-      - icon: github
-        href: https://twitter.com
-      - icon: twitter
-        href: https://twitter.com
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: assignments.qmd
+        text: Assignments
+      - href: project.qmd
+        text: Project
+    right:
       - icon: linkedin
-        href: https://linkedin.com
-
-  sidebar:
-    - title: "Assignments"
-      style: "docked"
-      search: true
-      contents:
-        - assignments.qmd
-        - assignments/assignment-1.qmd
-        - assignments/assignment-2.qmd  
-  page-navigation: true
-  back-to-top-navigation: true
-  page-footer:
-    center: "Hacettepe IE - EMU660 - Spring 2026" 
-    border: true
+        href: https://linkedin.com/in/feyzagaripay
 format:
   html:
+    theme: cosmo
     toc: true
-    toc-location: left
-    theme: 
-      light: simplex 
-      dark: cyborg
-    css: styles.css
 
 
-editor: visual
 
