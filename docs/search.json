@@ -1,130 +1,170 @@
 [
   {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "##Assignments\nBelow are my assignments.\n-Assignment 1\n-Assignment 2"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome to My Analytics Lab",
+    "title": "EMU660 - Feyza Ünal",
     "section": "",
-    "text": "Hello!! My name is xxx xxxx.\nThis is my personal webpage.\nPlease stay tuned to follow my works on data analytics, blog posts, and more.\n\n\n\n Back to top"
+    "text": "Welcome\nWelcome to my EMU660 course website.\nThis website contains my assignments and project work for theEMU 660 course\n\n\nAbout Me\nMy name is Feyza Ünal. I am a student in the EMU660 course.\n\n\nAssignments\n\nAssignment 1\nAssignment 2\nAssignment 3"
+  },
+  {
+    "objectID": "assingment-2.html",
+    "href": "assingment-2.html",
+    "title": "Assignment 2",
+    "section": "",
+    "text": "This page is reserved for Assignment 2 work."
   },
   {
     "objectID": "project.html",
     "href": "project.html",
-    "title": "Project X",
+    "title": "Project",
     "section": "",
-    "text": "Welcome to my/our project page.\nKeep an eye on this space to stay updated with my project activities.\n(The titles below are provided as examples; please feel free to adjust them as necessary.)"
+    "text": "Write the overview and scope of your project here."
   },
   {
-    "objectID": "project.html#data-source",
-    "href": "project.html#data-source",
-    "title": "Project X",
-    "section": "2.1 Data Source",
-    "text": "2.1 Data Source\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#general-information-about-data",
-    "href": "project.html#general-information-about-data",
-    "title": "Project X",
-    "section": "2.2 General Information About Data",
-    "text": "2.2 General Information About Data\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#reason-of-choice",
-    "href": "project.html#reason-of-choice",
-    "title": "Project X",
-    "section": "2.3 Reason of Choice",
-    "text": "2.3 Reason of Choice\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#preprocessing",
-    "href": "project.html#preprocessing",
-    "title": "Project X",
-    "section": "2.4 Preprocessing",
-    "text": "2.4 Preprocessing\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#exploratory-data-analysis",
-    "href": "project.html#exploratory-data-analysis",
-    "title": "Project X",
-    "section": "3.1 Exploratory Data Analysis",
-    "text": "3.1 Exploratory Data Analysis\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#trend-analysis",
-    "href": "project.html#trend-analysis",
-    "title": "Project X",
-    "section": "3.2 Trend Analysis",
-    "text": "3.2 Trend Analysis\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#model-fitting",
-    "href": "project.html#model-fitting",
-    "title": "Project X",
-    "section": "3.3 Model Fitting",
-    "text": "3.3 Model Fitting\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#results",
-    "href": "project.html#results",
-    "title": "Project X",
-    "section": "3.4 Results",
-    "text": "3.4 Results\nxxxxxx"
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "My Assignments",
+    "objectID": "project.html#project-overview-and-scope",
+    "href": "project.html#project-overview-and-scope",
+    "title": "Project",
     "section": "",
-    "text": "On this page, I showcase the assignment I conducted for the [term and year, e.g. Spring 2024-2025] EMU660 Decision Making with Analytics course.\nPlease use left menu to navigate through my assignments.\n\n\n\n Back to top",
-    "crumbs": [
-      "My Assignments"
-    ]
+    "text": "Write the overview and scope of your project here."
   },
   {
-    "objectID": "about.html#employements",
-    "href": "about.html#employements",
-    "title": "About Me",
-    "section": "Employements",
-    "text": "Employements\n\nFirm xxx, position xx, year xxx\nFirm yyy, position yyy, year yyy"
+    "objectID": "project.html#data",
+    "href": "project.html#data",
+    "title": "Project",
+    "section": "Data",
+    "text": "Data\nDescribe the data you will use in your project."
   },
   {
-    "objectID": "about.html#internships",
-    "href": "about.html#internships",
-    "title": "About Me",
-    "section": "Internships",
-    "text": "Internships\n\nFirm aaa, position xx, year xxx\nFirm bbb, position yyy, year yyy"
+    "objectID": "project.html#analysis",
+    "href": "project.html#analysis",
+    "title": "Project",
+    "section": "Analysis",
+    "text": "Analysis\nExplain the analysis methods you will use."
   },
   {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "My Blog",
+    "objectID": "project.html#key-takeaways",
+    "href": "project.html#key-takeaways",
+    "title": "Project",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\nSummarize the main points and expected findings of your project."
+  },
+  {
+    "objectID": "assignment-1.html",
+    "href": "assignment-1.html",
+    "title": "Assignment-1",
     "section": "",
-    "text": "This page is under construction.\n\n\n\n Back to top"
+    "text": "This page contains my Assignment 1 work."
   },
   {
-    "objectID": "docs/assignments/assignment-1.html",
-    "href": "docs/assignments/assignment-1.html",
+    "objectID": "assignment-1.html#introduction",
+    "href": "assignment-1.html#introduction",
     "title": "Assignment 1",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts."
+    "section": "Introduction",
+    "text": "Introduction\nThis assignment focuses on decision making with analytics.\nThe goal of this assignment is to analyze a dataset and apply analytical methods to support decision making."
   },
   {
-    "objectID": "assignments/assignment-1.html",
-    "href": "assignments/assignment-1.html",
+    "objectID": "assignment-1.html#problem-description",
+    "href": "assignment-1.html#problem-description",
     "title": "Assignment 1",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts.",
-    "crumbs": [
-      "Assignment 1"
-    ]
+    "section": "Problem Description",
+    "text": "Problem Description\nIn this assignment, we investigate a decision-making problem using available data.\nThe objective is to understand the relationships between variables and draw insights that can support better decisions."
   },
   {
-    "objectID": "assignments/assignment-2.html",
-    "href": "assignments/assignment-2.html",
+    "objectID": "assignment-1.html#data",
+    "href": "assignment-1.html#data",
+    "title": "Assignment 1",
+    "section": "Data",
+    "text": "Data\nThe dataset used in this assignment contains observations related to the problem being analyzed.\nThe variables represent different characteristics that may influence the decision outcome."
+  },
+  {
+    "objectID": "assignment-1.html#methodology",
+    "href": "assignment-1.html#methodology",
+    "title": "Assignment 1",
+    "section": "Methodology",
+    "text": "Methodology\nThe analysis will include:\n\nData exploration\n\nDescriptive statistics\n\nVisualization\n\nAnalytical interpretation\n\nThese methods help identify patterns and relationships in the data."
+  },
+  {
+    "objectID": "assignment-1.html#results",
+    "href": "assignment-1.html#results",
+    "title": "Assignment 1",
+    "section": "Results",
+    "text": "Results\nThe results of the analysis will provide insights into the factors affecting the decision problem.\nVisualizations and summary statistics will be used to support the findings."
+  },
+  {
+    "objectID": "assignment-1.html#conclusion",
+    "href": "assignment-1.html#conclusion",
+    "title": "Assignment 1",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis assignment demonstrates how analytical tools can support decision making.\nThe findings highlight important patterns in the data and provide a foundation for further analysis."
+  },
+  {
+    "objectID": "assingment-2.html#assignment-2",
+    "href": "assingment-2.html#assignment-2",
     "title": "Assignment 2",
     "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Assignment 2"
-    ]
+    "text": "This page is reserved for Assignment 2 work."
+  },
+  {
+    "objectID": "assingment-2.html#assignment-2-1",
+    "href": "assingment-2.html#assignment-2-1",
+    "title": "Assignment 2",
+    "section": "Assignment 2",
+    "text": "Assignment 2\nThis page is reserved for Assignment 2 work."
+  },
+  {
+    "objectID": "assignment-2.html",
+    "href": "assignment-2.html",
+    "title": "Assignment 2",
+    "section": "",
+    "text": "This page is reserved for Assignment 2 work."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "My name is Feyza Ünal.\nI am currently studying Industrial Engineering.\nThis website was created as part of the EMU660 course to showcase my assignments and coursework.\nMy interests include data analysis, statistics, and industrial engineering applications."
+  },
+  {
+    "objectID": "assignment-1.html#video-summary",
+    "href": "assignment-1.html#video-summary",
+    "title": "Assignment-1",
+    "section": "Video Summary",
+    "text": "Video Summary\nThe video discusses the relationship between Data Science and Industrial Engineering. The speakers explain how data science techniques can be used to improve decision-making in engineering systems and business processes.\nThey emphasize that modern organizations generate large amounts of data and industrial engineers can use this data to optimize production systems, logistics, and operations. The talk also highlights the importance of programming, statistics, and analytical thinking for engineers who want to work in data-driven environments.\nOverall, the video shows how data science tools help industrial engineers analyze complex systems and make more efficient and informed decisions."
+  },
+  {
+    "objectID": "assignment-1.html#open-ended-question",
+    "href": "assignment-1.html#open-ended-question",
+    "title": "Assignment-1",
+    "section": "Open-ended Question",
+    "text": "Open-ended Question\nHow can data science improve decision-making in industrial engineering?\nAnswer\nData science helps industrial engineers analyze large datasets, identify patterns, and optimize processes. By using statistical analysis and machine learning techniques, engineers can make better predictions and improve operational efficiency."
+  },
+  {
+    "objectID": "assignment-1.html#multiple-choice-question",
+    "href": "assignment-1.html#multiple-choice-question",
+    "title": "Assignment-1",
+    "section": "Multiple Choice Question",
+    "text": "Multiple Choice Question\nWhich skill is essential for combining data science with industrial engineering?\n\nArtistic drawing\n\nStatistical analysis\n\nMusical composition\n\nArchitecture design\n\nCorrect Answer: B) Statistical analysis\n\n\n# Personal variables\nmy_first &lt;- \"Feyza\"\nmy_birth_year &lt;- 1990\n\n# Calculate k\nk &lt;- (nchar(my_first) + my_birth_year) %% 15 + 8\ncat(\"Calculated value of k:\", k, \"\\n\")\n\nCalculated value of k: 8 \n\n# Custom statistical summary function\ncompute_stats &lt;- function(x) {\n  list(\n    mean = mean(x, na.rm = TRUE),\n    median = median(x, na.rm = TRUE),\n    variance = var(x, na.rm = TRUE),\n    iqr = IQR(x, na.rm = TRUE),\n    min = min(x, na.rm = TRUE),\n    max = max(x, na.rm = TRUE)\n  )\n}\n\n# Using sapply\ncat(\"\\n--- sapply results ---\\n\")\n\n\n--- sapply results ---\n\nsapply(mtcars, compute_stats)\n\n         mpg      cyl      disp     hp       drat      wt       qsec    \nmean     20.09062 6.1875   230.7219 146.6875 3.596563  3.21725  17.84875\nmedian   19.2     6        196.3    123      3.695     3.325    17.71   \nvariance 36.3241  3.189516 15360.8  4700.867 0.2858814 0.957379 3.193166\niqr      7.375    4        205.175  83.5     0.84      1.02875  2.0075  \nmin      10.4     4        71.1     52       2.76      1.513    14.5    \nmax      33.9     8        472      335      4.93      5.424    22.9    \n         vs        am        gear      carb    \nmean     0.4375    0.40625   3.6875    2.8125  \nmedian   0         0         4         2       \nvariance 0.2540323 0.2489919 0.5443548 2.608871\niqr      1         1         1         2       \nmin      0         0         3         1       \nmax      1         1         5         8       \n\n# Using apply\ncat(\"\\n--- apply results ---\\n\")\n\n\n--- apply results ---\n\napply_results &lt;- apply(as.matrix(mtcars), 2, compute_stats)\nprint(apply_results)\n\n$mpg\n$mpg$mean\n[1] 20.09062\n\n$mpg$median\n[1] 19.2\n\n$mpg$variance\n[1] 36.3241\n\n$mpg$iqr\n[1] 7.375\n\n$mpg$min\n[1] 10.4\n\n$mpg$max\n[1] 33.9\n\n\n$cyl\n$cyl$mean\n[1] 6.1875\n\n$cyl$median\n[1] 6\n\n$cyl$variance\n[1] 3.189516\n\n$cyl$iqr\n[1] 4\n\n$cyl$min\n[1] 4\n\n$cyl$max\n[1] 8\n\n\n$disp\n$disp$mean\n[1] 230.7219\n\n$disp$median\n[1] 196.3\n\n$disp$variance\n[1] 15360.8\n\n$disp$iqr\n[1] 205.175\n\n$disp$min\n[1] 71.1\n\n$disp$max\n[1] 472\n\n\n$hp\n$hp$mean\n[1] 146.6875\n\n$hp$median\n[1] 123\n\n$hp$variance\n[1] 4700.867\n\n$hp$iqr\n[1] 83.5\n\n$hp$min\n[1] 52\n\n$hp$max\n[1] 335\n\n\n$drat\n$drat$mean\n[1] 3.596563\n\n$drat$median\n[1] 3.695\n\n$drat$variance\n[1] 0.2858814\n\n$drat$iqr\n[1] 0.84\n\n$drat$min\n[1] 2.76\n\n$drat$max\n[1] 4.93\n\n\n$wt\n$wt$mean\n[1] 3.21725\n\n$wt$median\n[1] 3.325\n\n$wt$variance\n[1] 0.957379\n\n$wt$iqr\n[1] 1.02875\n\n$wt$min\n[1] 1.513\n\n$wt$max\n[1] 5.424\n\n\n$qsec\n$qsec$mean\n[1] 17.84875\n\n$qsec$median\n[1] 17.71\n\n$qsec$variance\n[1] 3.193166\n\n$qsec$iqr\n[1] 2.0075\n\n$qsec$min\n[1] 14.5\n\n$qsec$max\n[1] 22.9\n\n\n$vs\n$vs$mean\n[1] 0.4375\n\n$vs$median\n[1] 0\n\n$vs$variance\n[1] 0.2540323\n\n$vs$iqr\n[1] 1\n\n$vs$min\n[1] 0\n\n$vs$max\n[1] 1\n\n\n$am\n$am$mean\n[1] 0.40625\n\n$am$median\n[1] 0\n\n$am$variance\n[1] 0.2489919\n\n$am$iqr\n[1] 1\n\n$am$min\n[1] 0\n\n$am$max\n[1] 1\n\n\n$gear\n$gear$mean\n[1] 3.6875\n\n$gear$median\n[1] 4\n\n$gear$variance\n[1] 0.5443548\n\n$gear$iqr\n[1] 1\n\n$gear$min\n[1] 3\n\n$gear$max\n[1] 5\n\n\n$carb\n$carb$mean\n[1] 2.8125\n\n$carb$median\n[1] 2\n\n$carb$variance\n[1] 2.608871\n\n$carb$iqr\n[1] 2\n\n$carb$min\n[1] 1\n\n$carb$max\n[1] 8\n\n# Using for loop\ncat(\"\\n--- For loop results ---\\n\")\n\n\n--- For loop results ---\n\nfor (i in 1:ncol(mtcars)) {\n  cat(colnames(mtcars)[i], \":\\n\")\n  print(compute_stats(mtcars[[i]]))\n}\n\nmpg :\n$mean\n[1] 20.09062\n\n$median\n[1] 19.2\n\n$variance\n[1] 36.3241\n\n$iqr\n[1] 7.375\n\n$min\n[1] 10.4\n\n$max\n[1] 33.9\n\ncyl :\n$mean\n[1] 6.1875\n\n$median\n[1] 6\n\n$variance\n[1] 3.189516\n\n$iqr\n[1] 4\n\n$min\n[1] 4\n\n$max\n[1] 8\n\ndisp :\n$mean\n[1] 230.7219\n\n$median\n[1] 196.3\n\n$variance\n[1] 15360.8\n\n$iqr\n[1] 205.175\n\n$min\n[1] 71.1\n\n$max\n[1] 472\n\nhp :\n$mean\n[1] 146.6875\n\n$median\n[1] 123\n\n$variance\n[1] 4700.867\n\n$iqr\n[1] 83.5\n\n$min\n[1] 52\n\n$max\n[1] 335\n\ndrat :\n$mean\n[1] 3.596563\n\n$median\n[1] 3.695\n\n$variance\n[1] 0.2858814\n\n$iqr\n[1] 0.84\n\n$min\n[1] 2.76\n\n$max\n[1] 4.93\n\nwt :\n$mean\n[1] 3.21725\n\n$median\n[1] 3.325\n\n$variance\n[1] 0.957379\n\n$iqr\n[1] 1.02875\n\n$min\n[1] 1.513\n\n$max\n[1] 5.424\n\nqsec :\n$mean\n[1] 17.84875\n\n$median\n[1] 17.71\n\n$variance\n[1] 3.193166\n\n$iqr\n[1] 2.0075\n\n$min\n[1] 14.5\n\n$max\n[1] 22.9\n\nvs :\n$mean\n[1] 0.4375\n\n$median\n[1] 0\n\n$variance\n[1] 0.2540323\n\n$iqr\n[1] 1\n\n$min\n[1] 0\n\n$max\n[1] 1\n\nam :\n$mean\n[1] 0.40625\n\n$median\n[1] 0\n\n$variance\n[1] 0.2489919\n\n$iqr\n[1] 1\n\n$min\n[1] 0\n\n$max\n[1] 1\n\ngear :\n$mean\n[1] 3.6875\n\n$median\n[1] 4\n\n$variance\n[1] 0.5443548\n\n$iqr\n[1] 1\n\n$min\n[1] 3\n\n$max\n[1] 5\n\ncarb :\n$mean\n[1] 2.8125\n\n$median\n[1] 2\n\n$variance\n[1] 2.608871\n\n$iqr\n[1] 2\n\n$min\n[1] 1\n\n$max\n[1] 8\n\n### Task 3-d\n\n\nlibrary(dslabs)\ndata(\"polls_us_election_2016\")\n\ndata_original &lt;- polls_us_election_2016\n\n# Display k rows\ncat(\"\\nRows from original dataset:\\n\")\n\n\nRows from original dataset:\n\nif (k %% 2 == 0) {\n  print(head(data_original, k))\n} else {\n  print(tail(data_original, k))\n}\n\n  state  startdate    enddate\n1  U.S. 2016-11-03 2016-11-06\n2  U.S. 2016-11-01 2016-11-07\n3  U.S. 2016-11-02 2016-11-06\n4  U.S. 2016-11-04 2016-11-07\n5  U.S. 2016-11-03 2016-11-06\n6  U.S. 2016-11-03 2016-11-06\n7  U.S. 2016-11-02 2016-11-06\n8  U.S. 2016-11-03 2016-11-05\n                                                    pollster grade samplesize\n1                                   ABC News/Washington Post    A+       2220\n2                                    Google Consumer Surveys     B      26574\n3                                                      Ipsos    A-       2195\n4                                                     YouGov     B       3677\n5                                           Gravis Marketing    B-      16639\n6 Fox News/Anderson Robbins Research/Shaw & Company Research     A       1295\n7                                    CBS News/New York Times    A-       1426\n8                               NBC News/Wall Street Journal    A-       1282\n  population rawpoll_clinton rawpoll_trump rawpoll_johnson rawpoll_mcmullin\n1         lv           47.00         43.00            4.00               NA\n2         lv           38.03         35.69            5.46               NA\n3         lv           42.00         39.00            6.00               NA\n4         lv           45.00         41.00            5.00               NA\n5         rv           47.00         43.00            3.00               NA\n6         lv           48.00         44.00            3.00               NA\n7         lv           45.00         41.00            5.00               NA\n8         lv           44.00         40.00            6.00               NA\n  adjpoll_clinton adjpoll_trump adjpoll_johnson adjpoll_mcmullin\n1        45.20163      41.72430        4.626221               NA\n2        43.34557      41.21439        5.175792               NA\n3        42.02638      38.81620        6.844734               NA\n4        45.65676      40.92004        6.069454               NA\n5        46.84089      42.33184        3.726098               NA\n6        49.02208      43.95631        3.057876               NA\n7        45.11649      40.92722        4.341786               NA\n8        43.58576      40.77325        5.365788               NA\n\n# Total NA count\ncat(\"\\nTotal NA values:\", sum(is.na(data_original)), \"\\n\")\n\n\nTotal NA values: 11604 \n\n# NA per column\nna_per_column &lt;- sort(colSums(is.na(data_original)), decreasing = TRUE)\n\ncat(\"\\nNA values per column (top 8):\\n\")\n\n\nNA values per column (top 8):\n\nprint(head(na_per_column, 8))\n\nrawpoll_mcmullin adjpoll_mcmullin  rawpoll_johnson  adjpoll_johnson \n            4178             4178             1409             1409 \n           grade       samplesize            state        startdate \n             429                1                0                0 \n\n# Replace NA values\nnew_data &lt;- data_original\n\nfor(i in 1:ncol(new_data)) {\n\n  if(is.numeric(new_data[[i]])) {\n\n    new_data[[i]][is.na(new_data[[i]])] &lt;- my_birth_year + k\n\n  } else {\n\n    new_data[[i]] &lt;- as.character(new_data[[i]])\n\n    new_data[[i]][is.na(new_data[[i]])] &lt;- paste0(my_first, \"_\", k)\n\n  }\n\n}\n\n# Display rows from new dataset\ncat(\"\\nRows from new dataset:\\n\")\n\n\nRows from new dataset:\n\nif (k %% 2 == 0) {\n  print(head(new_data, k))\n} else {\n  print(tail(new_data, k))\n}\n\n  state  startdate    enddate\n1  U.S. 2016-11-03 2016-11-06\n2  U.S. 2016-11-01 2016-11-07\n3  U.S. 2016-11-02 2016-11-06\n4  U.S. 2016-11-04 2016-11-07\n5  U.S. 2016-11-03 2016-11-06\n6  U.S. 2016-11-03 2016-11-06\n7  U.S. 2016-11-02 2016-11-06\n8  U.S. 2016-11-03 2016-11-05\n                                                    pollster grade samplesize\n1                                   ABC News/Washington Post    A+       2220\n2                                    Google Consumer Surveys     B      26574\n3                                                      Ipsos    A-       2195\n4                                                     YouGov     B       3677\n5                                           Gravis Marketing    B-      16639\n6 Fox News/Anderson Robbins Research/Shaw & Company Research     A       1295\n7                                    CBS News/New York Times    A-       1426\n8                               NBC News/Wall Street Journal    A-       1282\n  population rawpoll_clinton rawpoll_trump rawpoll_johnson rawpoll_mcmullin\n1         lv           47.00         43.00            4.00             1998\n2         lv           38.03         35.69            5.46             1998\n3         lv           42.00         39.00            6.00             1998\n4         lv           45.00         41.00            5.00             1998\n5         rv           47.00         43.00            3.00             1998\n6         lv           48.00         44.00            3.00             1998\n7         lv           45.00         41.00            5.00             1998\n8         lv           44.00         40.00            6.00             1998\n  adjpoll_clinton adjpoll_trump adjpoll_johnson adjpoll_mcmullin\n1        45.20163      41.72430        4.626221             1998\n2        43.34557      41.21439        5.175792             1998\n3        42.02638      38.81620        6.844734             1998\n4        45.65676      40.92004        6.069454             1998\n5        46.84089      42.33184        3.726098             1998\n6        49.02208      43.95631        3.057876             1998\n7        45.11649      40.92722        4.341786             1998\n8        43.58576      40.77325        5.365788             1998\n\n# Remaining NA\ncat(\"\\nRemaining NA values:\", sum(is.na(new_data)), \"\\n\")\n\n\nRemaining NA values: 0 \n\n# Check any NA\ncat(\"\\nAny NA left:\", anyNA(new_data), \"\\n\")\n\n\nAny NA left: FALSE \n\n\nAI Disclosure\nI used AI tools (ChatGPT) to help structure the R code and better understand the assignment requirements.\nPrompt used:\n“Write R code for an assignment that calculates k, analyzes mtcars dataset with cus"
+  },
+  {
+    "objectID": "assignment-1.html#custom-summary-function",
+    "href": "assignment-1.html#custom-summary-function",
+    "title": "Assignment-1",
+    "section": "Custom Summary Function",
+    "text": "Custom Summary Function\ncompute_stats &lt;- function(x){ list( mean = mean(x), median = median(x), variance = var(x), IQR = IQR(x), min = min(x), max = max(x) ) }"
+  },
+  {
+    "objectID": "about.html#cv",
+    "href": "about.html#cv",
+    "title": "About Me",
+    "section": "CV",
+    "text": "CV\nDownload my CV"
   }
 ]

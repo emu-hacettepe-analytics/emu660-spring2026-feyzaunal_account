@@ -1,0 +1,7 @@
+
+---
+title: "Assignment 2"
+format: html
+---
+
+This page is reserved for Assignment 2 work.
