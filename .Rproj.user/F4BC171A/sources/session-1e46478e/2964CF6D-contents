@@ -1,0 +1,149 @@
+---
+title: "Earthquake Analysis of Türkiye (2020-2026)"
+author: "Feyza Ünal"
+format: html
+---
+
+Türkiye is located on major fault lines and is highly prone to seismic activity. This project analyzes earthquakes with magnitude greater than 3 between 2020 and 2026 using data obtained from AFAD. The aim is to identify temporal trends and spatial patterns in earthquake occurrences.
+
+# 1. Project Overview and Scope
+
+In this project, I analyze earthquake data from Türkiye obtained from AFAD (Disaster and Emergency Management Presidency) for the years 2020-2026.
+
+My aim is to show, using analytical methods, how seismic activity has changed, particularly after the 2023 Kahramanmaraş earthquakes, and in which regions it has clustered.
+
+# 2. Data
+
+The dataset was provided by AFAD and consists of 9 columns.
+
+The key columns are: `Magnitude`, `Latitude`, `Longitude`, and `Date`.
+
+## 2.1 Data Source
+
+https://deprem.afad.gov.tr/event-catalog
+
+## 2.2 General Information About Data
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| results: asis
+
+library(readxl)
+
+deprem_data <- read_excel("~/Desktop/R/data.xlsx")
+deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
+
+cat(
+  "This dataset contains earthquake records in Türkiye between 2020 and 2026, sourced from AFAD. It includes ",
+  nrow(deprem_data),
+  " observations and ",
+  ncol(deprem_data),
+  " variables. The magnitude values range between ",
+  min(deprem_data$Magnitude, na.rm = TRUE),
+  " and ",
+  max(deprem_data$Magnitude, na.rm = TRUE),
+  "."
+)
+```
+
+## 2.3 Reason of Choice
+
+Türkiye is a country deeply affected by seismic activities due to its geographical location on major fault lines. The 2023 Kahramanmaraş earthquakes highlighted the importance of data-driven disaster management. I chose this dataset to analyze earthquake patterns using analytical tools and visualizations.
+
+## 2.4 Preprocessing
+
+The raw data required several preparation steps before analysis:
+
+- The dataset was imported from an Excel file using the `readxl` library.
+- The `Date` column was converted into `POSIXct` format to enable time-based analysis.
+- The `Magnitude` column was converted into numeric format.
+- The cleaned dataset was saved as an `.RData` file for reproducibility.
+
+```{r}
+#| label: data-preparation
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readxl)
+library(dplyr)
+
+deprem_data <- read_excel("~/Desktop/R/data.xlsx")
+
+deprem_data$Date <- as.POSIXct(
+  deprem_data$Date,
+  format = "%d/%m/%Y %H:%M:%S"
+)
+
+deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
+
+save(deprem_data, file = "deprem_verisi.RData")
+```
+
+# 3. Analysis
+
+## 3.1 Exploratory Data Analysis
+
+In this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.
+
+```{r}
+#| echo: false
+
+library(ggplot2)
+
+ggplot(deprem_data, aes(x = Magnitude)) +
+  geom_histogram(binwidth = 0.5, fill = "red", color = "white") +
+  labs(
+    title = "Magnitude Distribution of Earthquakes in Türkiye (2020-2026)",
+    x = "Magnitude",
+    y = "Count"
+  )
+```
+
+## 3.2 Trend Analysis
+
+This section examines how earthquake frequency has changed over time.
+
+```{r}
+#| echo: false
+
+library(dplyr)
+library(ggplot2)
+
+yearly_counts <- deprem_data %>%
+  mutate(Year = format(Date, "%Y")) %>%
+  count(Year)
+
+ggplot(yearly_counts, aes(x = Year, y = n, group = 1)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Number of Earthquakes by Year",
+    x = "Year",
+    y = "Count"
+  )
+```
+
+## 3.3 Model Fitting
+
+For the advanced analysis part, I may explore clustering methods such as K-means based on latitude and longitude to identify geographic hotspots of seismic activity. I may also examine simple time-based aggregations to better understand changes in earthquake frequency over time.
+
+## 3.4 Results
+
+Initial findings suggest that seismic activity in Türkiye is concentrated along major fault lines and that earthquake frequency varies across years.
+
+# 4. Results and Key Takeaways
+
+The frequency of earthquakes in Türkiye shows a noticeable increase after 2023.
+
+Seismic activities are not uniformly distributed but are heavily clustered along the East and North Anatolian fault lines.
+
+These patterns can provide useful insights for regional risk assessment and disaster preparedness.
+
+### Data Download
+
+Click the link below to download the processed dataset for reproducibility:
+
+[Download deprem_verisi.RData](deprem_verisi.RData)
