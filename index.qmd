@@ -1,0 +1,20 @@
+
+---
+title: "EMU660 - Feyza Ünal"
+format: html
+---
+
+# Welcome
+
+Welcome to my EMU660 course website.
+
+This website contains my assignments and project work for theEMU 660 course
+
+# About Me
+My name is Feyza Ünal.
+I am a student in the EMU660 course.
+
+# Assignments
+- Assignment 1
+- Assignment 2
+- Assignment 3

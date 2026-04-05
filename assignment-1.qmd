@@ -1,0 +1,153 @@
+---
+title: "Assignment-1"
+format: html
+---
+
+This page contains my Assignment 1 work.
+
+---
+
+## Video Summary
+
+The video discusses the relationship between Data Science and Industrial Engineering. 
+The speakers explain how data science techniques can be used to improve decision-making in engineering systems and business processes. 
+
+They emphasize that modern organizations generate large amounts of data and industrial engineers can use this data to optimize production systems, logistics, and operations. 
+The talk also highlights the importance of programming, statistics, and analytical thinking for engineers who want to work in data-driven environments.
+
+Overall, the video shows how data science tools help industrial engineers analyze complex systems and make more efficient and informed decisions.
+
+---
+
+## Open-ended Question
+
+How can data science improve decision-making in industrial engineering?
+
+**Answer**
+
+Data science helps industrial engineers analyze large datasets, identify patterns, and optimize processes. By using statistical analysis and machine learning techniques, engineers can make better predictions and improve operational efficiency.
+
+---
+
+## Multiple Choice Question
+
+Which skill is essential for combining data science with industrial engineering?
+
+A) Artistic drawing  
+B) Statistical analysis  
+C) Musical composition  
+D) Architecture design  
+
+**Correct Answer:** B) Statistical analysis
+
+---
+```{r}
+#| label: task-3-c
+#| echo: true
+
+# Personal variables
+my_first <- "Feyza"
+my_birth_year <- 1990
+
+# Calculate k
+k <- (nchar(my_first) + my_birth_year) %% 15 + 8
+cat("Calculated value of k:", k, "\n")
+
+# Custom statistical summary function
+compute_stats <- function(x) {
+  list(
+    mean = mean(x, na.rm = TRUE),
+    median = median(x, na.rm = TRUE),
+    variance = var(x, na.rm = TRUE),
+    iqr = IQR(x, na.rm = TRUE),
+    min = min(x, na.rm = TRUE),
+    max = max(x, na.rm = TRUE)
+  )
+}
+
+# Using sapply
+cat("\n--- sapply results ---\n")
+sapply(mtcars, compute_stats)
+
+# Using apply
+cat("\n--- apply results ---\n")
+apply_results <- apply(as.matrix(mtcars), 2, compute_stats)
+print(apply_results)
+
+# Using for loop
+cat("\n--- For loop results ---\n")
+for (i in 1:ncol(mtcars)) {
+  cat(colnames(mtcars)[i], ":\n")
+  print(compute_stats(mtcars[[i]]))
+}
+
+### Task 3-d
+```{r}
+#| label: task-3-d
+#| echo: true
+
+library(dslabs)
+data("polls_us_election_2016")
+
+data_original <- polls_us_election_2016
+
+# Display k rows
+cat("\nRows from original dataset:\n")
+
+if (k %% 2 == 0) {
+  print(head(data_original, k))
+} else {
+  print(tail(data_original, k))
+}
+
+# Total NA count
+cat("\nTotal NA values:", sum(is.na(data_original)), "\n")
+
+# NA per column
+na_per_column <- sort(colSums(is.na(data_original)), decreasing = TRUE)
+
+cat("\nNA values per column (top 8):\n")
+print(head(na_per_column, 8))
+
+# Replace NA values
+new_data <- data_original
+
+for(i in 1:ncol(new_data)) {
+
+  if(is.numeric(new_data[[i]])) {
+
+    new_data[[i]][is.na(new_data[[i]])] <- my_birth_year + k
+
+  } else {
+
+    new_data[[i]] <- as.character(new_data[[i]])
+
+    new_data[[i]][is.na(new_data[[i]])] <- paste0(my_first, "_", k)
+
+  }
+
+}
+
+# Display rows from new dataset
+cat("\nRows from new dataset:\n")
+
+if (k %% 2 == 0) {
+  print(head(new_data, k))
+} else {
+  print(tail(new_data, k))
+}
+
+# Remaining NA
+cat("\nRemaining NA values:", sum(is.na(new_data)), "\n")
+
+# Check any NA
+cat("\nAny NA left:", anyNA(new_data), "\n")
+
+```
+
+**AI Disclosure**
+
+I used AI tools (ChatGPT) to help structure the R code and better understand the assignment requirements.
+
+Prompt used:  
+"Write R code for an assignment that calculates k, analyzes mtcars dataset with cus

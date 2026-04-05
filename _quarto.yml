@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "EMU660 - Feyza Ünal"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: assignments.qmd
+        text: Assignments
+      - href: project.qmd
+        text: Project
+    right:
+      - icon: linkedin
+        href: https://linkedin.com/in/feyzagaripay
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+
+
