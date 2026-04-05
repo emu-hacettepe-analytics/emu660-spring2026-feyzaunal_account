@@ -166,5 +166,68 @@
     "title": "About Me",
     "section": "CV",
     "text": "CV\nDownload my CV"
+  },
+  {
+    "objectID": "earthquake_project.html",
+    "href": "earthquake_project.html",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "",
+    "text": "Türkiye is located on major fault lines and is highly prone to seismic activity. This project analyzes earthquakes with magnitude greater than 3 between 2020 and 2026 using data obtained from AFAD. The aim is to identify temporal trends and spatial patterns in earthquake occurrences."
+  },
+  {
+    "objectID": "earthquake_project.html#data-source",
+    "href": "earthquake_project.html#data-source",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "2.1 Data Source",
+    "text": "2.1 Data Source\nhttps://deprem.afad.gov.tr/event-catalog"
+  },
+  {
+    "objectID": "earthquake_project.html#general-information-about-data",
+    "href": "earthquake_project.html#general-information-about-data",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "2.2 General Information About Data",
+    "text": "2.2 General Information About Data\nThis dataset contains earthquake records in Türkiye between 2020 and 2026, sourced from AFAD. It includes 124701 observations and 9 variables. The magnitude values range between 0.3 and 3 ."
+  },
+  {
+    "objectID": "earthquake_project.html#reason-of-choice",
+    "href": "earthquake_project.html#reason-of-choice",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "2.3 Reason of Choice",
+    "text": "2.3 Reason of Choice\nTürkiye is a country deeply affected by seismic activities due to its geographical location on major fault lines. The 2023 Kahramanmaraş earthquakes highlighted the importance of data-driven disaster management. I chose this dataset to analyze earthquake patterns using analytical tools and visualizations."
+  },
+  {
+    "objectID": "earthquake_project.html#preprocessing",
+    "href": "earthquake_project.html#preprocessing",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "2.4 Preprocessing",
+    "text": "2.4 Preprocessing\nThe raw data required several preparation steps before analysis:\n\nThe dataset was imported from an Excel file using the readxl library.\nThe Date column was converted into POSIXct format to enable time-based analysis.\nThe Magnitude column was converted into numeric format.\nThe cleaned dataset was saved as an .RData file for reproducibility."
+  },
+  {
+    "objectID": "earthquake_project.html#exploratory-data-analysis",
+    "href": "earthquake_project.html#exploratory-data-analysis",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "3.1 Exploratory Data Analysis",
+    "text": "3.1 Exploratory Data Analysis\nIn this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes."
+  },
+  {
+    "objectID": "earthquake_project.html#trend-analysis",
+    "href": "earthquake_project.html#trend-analysis",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "3.2 Trend Analysis",
+    "text": "3.2 Trend Analysis\nThis section examines how earthquake frequency has changed over time."
+  },
+  {
+    "objectID": "earthquake_project.html#model-fitting",
+    "href": "earthquake_project.html#model-fitting",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "3.3 Model Fitting",
+    "text": "3.3 Model Fitting\nFor the advanced analysis part, I may explore clustering methods such as K-means based on latitude and longitude to identify geographic hotspots of seismic activity. I may also examine simple time-based aggregations to better understand changes in earthquake frequency over time."
+  },
+  {
+    "objectID": "earthquake_project.html#results",
+    "href": "earthquake_project.html#results",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "3.4 Results",
+    "text": "3.4 Results\nInitial findings suggest that seismic activity in Türkiye is concentrated along major fault lines and that earthquake frequency varies across years."
   }
 ]
