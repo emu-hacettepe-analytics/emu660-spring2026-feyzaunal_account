@@ -97,6 +97,47 @@ cat("Final dataset contains", nrow(deprem_data), "observations.")
 save(deprem_data, file = "deprem_verisi.RData")
 ```
 
+## 2.5 Global Data
+```{r}
+#| label: global-data
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(dplyr)
+
+# Dünya verilerini oku 
+eq2020 <- read_csv("~/Desktop/R/usgs_2020.csv")
+eq2021 <- read_csv("~/Desktop/R/usgs_2021.csv")
+eq2022 <- read_csv("~/Desktop/R/usgs_2022.csv")
+eq2023 <- read_csv("~/Desktop/R/usgs_2023.csv")
+eq2024 <- read_csv("~/Desktop/R/usgs_2024.csv")
+eq2025 <- read_csv("~/Desktop/R/usgs_2025.csv")
+eq2026 <- read_csv("~/Desktop/R/usgs_2026.csv")
+
+# Birleştir
+world_data <- bind_rows(eq2020, eq2021, eq2022, eq2023, eq2024, eq2025, eq2026)
+
+# ormatla
+world_data <- world_data %>%
+  mutate(
+    Date = as.POSIXct(time, format = "%Y-%m-%dT%H:%M:%OSZ", tz = "UTC"),
+    Magnitude = as.numeric(mag),
+    Latitude = as.numeric(latitude),
+    Longitude = as.numeric(longitude),
+    Region = "World"
+  ) %>%
+  filter(!is.na(Magnitude), Magnitude > 3)
+
+# Türkiye verisini etiketle
+deprem_data <- deprem_data %>%
+  mutate(Region = "Türkiye")
+
+# datayı birleştir
+combined_data <- bind_rows(deprem_data, world_data)
+```
+
 # 3. Analysis
 
 ## 3.1 Exploratory Data Analysis
