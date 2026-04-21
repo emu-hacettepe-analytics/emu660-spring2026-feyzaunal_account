@@ -5,7 +5,7 @@ format: html
 output-file: index.html
 ---
 
-Türkiye is located on major fault lines and is highly prone to seismic activity. This project analyzes earthquakes with magnitude greater than 3 between 2020 and 2026 using data obtained from AFAD. The aim is to identify temporal trends and spatial patterns in earthquake occurrences.
+Türkiye is located on major fault lines and is highly prone to seismic activity. This project analyzes earthquake data between 2020 and 2026 using data obtained from AFAD. The aim is to identify temporal trends and spatial patterns in earthquake occurrences.
 
 # 1. Project Overview and Scope
 
@@ -79,6 +79,12 @@ deprem_data$Date <- as.POSIXct(
 )
 
 deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
+#date filter
+deprem_data <- deprem_data %>%
+  filter(
+    Date >= as.POSIXct("2020-01-01"),
+    Date <= as.POSIXct("2026-12-31")
+  )
 
 save(deprem_data, file = "deprem_verisi.RData")
 ```
