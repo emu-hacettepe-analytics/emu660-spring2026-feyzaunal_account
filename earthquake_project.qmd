@@ -32,35 +32,17 @@ https://deprem.afad.gov.tr/event-catalog
 #| results: asis
 
 library(readxl)
-library(dplyr)
 
-deprem_data_info <- read_excel("~/Desktop/R/data.xlsx")
-
-deprem_data_info$Date <- as.POSIXct(
-  deprem_data_info$Date,
-  format = "%d/%m/%Y %H:%M:%S"
-)
-
-deprem_data_info$Magnitude <- as.numeric(deprem_data_info$Magnitude)
-
-deprem_data_info <- deprem_data_info %>%
-  filter(
-    Date >= as.POSIXct("2020-01-01"),
-    Date <= as.POSIXct("2026-12-31"),
-    !is.na(Magnitude),
-    Magnitude > 3
-  )
+# sadece ham veri okunur (filtre yok)
+deprem_data_raw <- read_excel("~/Desktop/R/data.xlsx")
 
 cat(
-  "This dataset contains earthquake records in Türkiye between 2020 and 2026, sourced from AFAD. After filtering, it includes ",
-  nrow(deprem_data_info),
+  "This dataset contains earthquake records in Türkiye between 2020 and 2026, sourced from AFAD. ",
+  "The raw dataset includes ",
+  nrow(deprem_data_raw),
   " observations and ",
-  ncol(deprem_data_info),
-  " variables. The magnitude values range between ",
-  min(deprem_data_info$Magnitude, na.rm = TRUE),
-  " and ",
-  max(deprem_data_info$Magnitude, na.rm = TRUE),
-  "."
+  ncol(deprem_data_raw),
+  " variables."
 )
 ```
 
@@ -218,3 +200,5 @@ These patterns can provide useful insights for regional risk assessment and disa
 Click the link below to download the processed dataset for reproducibility:
 
 [Download deprem_verisi.RData](deprem_verisi.RData)
+
+

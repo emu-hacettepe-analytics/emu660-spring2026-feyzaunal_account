@@ -242,7 +242,7 @@
     "href": "index.html#general-information-about-data",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "2.2 General Information About Data",
-    "text": "2.2 General Information About Data\nThis dataset contains earthquake records in Türkiye between 2020 and 2026, sourced from AFAD. After filtering, it includes 0 observations and 9 variables. The magnitude values range between Inf and -Inf ."
+    "text": "2.2 General Information About Data\nThis dataset contains earthquake records in Türkiye between 2020 and 2026, sourced from AFAD. The raw dataset includes 124701 observations and 9 variables."
   },
   {
     "objectID": "index.html#reason-of-choice",
