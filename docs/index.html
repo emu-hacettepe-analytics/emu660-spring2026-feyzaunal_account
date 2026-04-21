@@ -207,10 +207,12 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="preprocessing">2.4 Preprocessing</h2>
 <p>The raw data required several preparation steps before analysis:</p>
 <ul>
-<li>The dataset was imported from an Excel file using the <code>readxl</code> library.</li>
-<li>The <code>Date</code> column was converted into <code>POSIXct</code> format to enable time-based analysis.</li>
-<li>The <code>Magnitude</code> column was converted into numeric format.</li>
-<li>The cleaned dataset was saved as an <code>.RData</code> file for reproducibility.</li>
+<li><p>The dataset was imported from an Excel file using the <code>readxl</code> library.</p></li>
+<li><p>The <code>Date</code> column was converted into <code>POSIXct</code> format to enable time-based analysis.</p></li>
+<li><p>The <code>Magnitude</code> column was converted into numeric format.</p></li>
+<li><p>The cleaned dataset was saved as an <code>.RData</code> file for reproducibility.</p></li>
+<li><p>Only earthquakes between 2020 and 2026 were included in the analysis.</p></li>
+<li><p>Only earthquakes with a magnitude greater than 3 were included.</p></li>
 </ul>
 </section>
 </section>

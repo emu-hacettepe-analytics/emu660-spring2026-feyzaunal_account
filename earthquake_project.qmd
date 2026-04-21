@@ -62,6 +62,9 @@ The raw data required several preparation steps before analysis:
 - The `Magnitude` column was converted into numeric format.
 - The cleaned dataset was saved as an `.RData` file for reproducibility.
 
+- Only earthquakes between 2020 and 2026 were included in the analysis.
+- Only earthquakes with a magnitude greater than 3 were included.
+
 ```{r}
 #| label: data-preparation
 #| echo: false
@@ -85,7 +88,9 @@ deprem_data <- deprem_data %>%
     Date >= as.POSIXct("2020-01-01"),
     Date <= as.POSIXct("2026-12-31")
   )
-
+# magnitude filter
+deprem_data <- deprem_data %>%
+  filter(!is.na(Magnitude), Magnitude > 3)
 save(deprem_data, file = "deprem_verisi.RData")
 ```
 
