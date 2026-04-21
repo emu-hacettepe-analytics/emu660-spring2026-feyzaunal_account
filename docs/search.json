@@ -256,7 +256,7 @@
     "href": "index.html#preprocessing",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "2.4 Preprocessing",
-    "text": "2.4 Preprocessing\nThe raw data required several preparation steps before analysis:\n\nThe dataset was imported from an Excel file using the readxl library.\nThe Date column was converted into POSIXct format to enable time-based analysis.\nThe Magnitude column was converted into numeric format.\nThe cleaned dataset was saved as an .RData file for reproducibility.\nOnly earthquakes between 2020 and 2026 were included in the analysis.\nOnly earthquakes with a magnitude greater than 3 were included."
+    "text": "2.4 Preprocessing\nThe raw data required several preparation steps before analysis:\n\nThe dataset was imported from an Excel file using the readxl library.\nThe Date column was converted into POSIXct format to enable time-based analysis.\nThe Magnitude column was converted into numeric format.\nThe cleaned dataset was saved as an .RData file for reproducibility.\nOnly earthquakes between 2020 and 2026 were included in the analysis.\nOnly earthquakes with a magnitude greater than 3 were included.\n\n\n\nFinal dataset contains 0 observations."
   },
   {
     "objectID": "index.html#exploratory-data-analysis",

@@ -91,6 +91,9 @@ deprem_data <- deprem_data %>%
 # magnitude filter
 deprem_data <- deprem_data %>%
   filter(!is.na(Magnitude), Magnitude > 3)
+
+cat("Final dataset contains", nrow(deprem_data), "observations.")
+
 save(deprem_data, file = "deprem_verisi.RData")
 ```
 
