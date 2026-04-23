@@ -74,16 +74,16 @@ deprem_data$Date <- as.POSIXct(
   format = "%d/%m/%Y %H:%M:%S"
 )
 
-# 🔥 SADELEŞTİR (EN KRİTİK)
-deprem_data$Date <- as.Date(deprem_data$Date)
+# 🔥 YIL ÇIKAR (EN KRİTİK)
+deprem_data$Year <- as.numeric(format(deprem_data$Date, "%Y"))
 
 deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
 
-# filtre (artık %100 çalışır)
+# 🔥 ARTIK YIL ÜZERİNDEN FİLTRE
 deprem_data <- deprem_data %>%
   filter(
-    Date >= as.Date("2020-01-01"),
-    Date <= as.Date("2026-12-31"),
+    Year >= 2020,
+    Year <= 2026,
     !is.na(Magnitude),
     Magnitude > 3
   )
