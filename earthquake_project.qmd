@@ -72,23 +72,25 @@ library(readxl)
 library(dplyr)
 library(lubridate)
 
-# veriyi oku
+# 1) Veriyi oku
 deprem_data <- read_excel("~/Desktop/R/data.xlsx")
 
-print(head(deprem_data))
-print(head(deprem_data$Date))
-str(deprem_data$Date)
-
-# 🔥 DATE DÜZELTME (EN KRİTİK)
+# 2) Date kolonunu OTOMATİK çözüyoruz (tüm formatları dener)
 deprem_data$Date <- parse_date_time(
   deprem_data$Date,
-  orders = c("dmy HMS", "ymd HMS", "dmy HM", "ymd HM", "dmy", "ymd")
+  orders = c("dmy HMS","dmy HM","dmy",
+             "ymd HMS","ymd HM","ymd",
+             "mdy HMS","mdy HM","mdy")
 )
 
-# numeric dönüşüm
+# 3) Magnitude düzelt
 deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
 
-# filtre
+# 🔥 4) DEBUG (BUNU SİLME ŞİMDİLİK)
+cat("Toplam satır:", nrow(deprem_data), "\n")
+cat("NA Date sayısı:", sum(is.na(deprem_data$Date)), "\n")
+
+# 5) Filtre (Date NA olanları atıyoruz)
 deprem_data <- deprem_data %>%
   filter(
     !is.na(Date),
@@ -98,9 +100,8 @@ deprem_data <- deprem_data %>%
     Magnitude > 3
   )
 
-# çıktı
+# 6) SONUÇ
 cat("Final dataset contains", nrow(deprem_data), "observations.")
-```
 
 ## 2.5 Global Data
 
