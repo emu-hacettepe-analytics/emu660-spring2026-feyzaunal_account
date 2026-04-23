@@ -266,31 +266,48 @@ Attaching package: 'dplyr'</code></pre>
 
     intersect, setdiff, setequal, union</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>deprem_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/Desktop/R/data.xlsx"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Date parse</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>deprem_data<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  deprem_data<span class="sc">$</span>Date,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"%d/%m/%Y %H:%M:%S"</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 🔥 YIL ÇIKAR (EN KRİTİK)</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>deprem_data<span class="sc">$</span>Year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">format</span>(deprem_data<span class="sc">$</span>Date, <span class="st">"%Y"</span>))</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>deprem_data<span class="sc">$</span>Magnitude <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(deprem_data<span class="sc">$</span>Magnitude)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 🔥 ARTIK YIL ÜZERİNDEN FİLTRE</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>deprem_data <span class="ot">&lt;-</span> deprem_data <span class="sc">%&gt;%</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&gt;=</span> <span class="dv">2020</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&lt;=</span> <span class="dv">2026</span>,</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(Magnitude),</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    Magnitude <span class="sc">&gt;</span> <span class="dv">3</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Final dataset contains"</span>, <span class="fu">nrow</span>(deprem_data), <span class="st">"observations."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Veriyi oku</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>deprem_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"~/Desktop/R/data.xlsx"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Date düzelt (senin formata göre)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>deprem_data<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  deprem_data<span class="sc">$</span>Date,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"%d/%m/%Y %H:%M:%S"</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Year çıkar</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>deprem_data<span class="sc">$</span>Year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">format</span>(deprem_data<span class="sc">$</span>Date, <span class="st">"%Y"</span>))</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Magnitude numeric yap</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>deprem_data<span class="sc">$</span>Magnitude <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(deprem_data<span class="sc">$</span>Magnitude)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 🔥 5. FİLTRE (EN ÖNEMLİ DÜZELTME)</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>deprem_data <span class="ot">&lt;-</span> deprem_data <span class="sc">%&gt;%</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&gt;=</span> <span class="dv">2020</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&lt;=</span> <span class="dv">2026</span>,</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(Magnitude),</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    Magnitude <span class="sc">&gt;</span> <span class="dv">2</span>   <span class="co"># 🔥 3 değil!</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Sonuç</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Final dataset contains"</span>, <span class="fu">nrow</span>(deprem_data), <span class="st">"observations.</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Final dataset contains 0 observations.</code></pre>
+<pre><code>Final dataset contains 25668 observations.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Kontrol</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(deprem_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 10
+  Date                Longitude Latitude Depth   Rms Type  Magnitude Location   
+  &lt;dttm&gt;                  &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;      
+1 2026-03-01 16:50:30      39.3     38.2  7.28  0.33 ML          2.5 Çüngüş (Di…
+2 2026-03-01 15:29:44      36.6     37.2  7     0.56 ML          2.2 Bahçe (Osm…
+3 2026-03-01 09:35:38      31.8     35.1  7     0.94 ML          2.3 Akdeniz - …
+4 2026-03-01 04:32:19      35.4     37.7  7     0.79 ML          2.2 Yahyalı (K…
+5 2026-02-28 23:52:32      36.5     37.9  7     0.5  ML          2.4 Göksun (Ka…
+6 2026-02-28 05:26:43      36.0     36.3 10.5   0.36 ML          2.7 Samandağ (…
+# ℹ 2 more variables: EventID &lt;dbl&gt;, Year &lt;dbl&gt;</code></pre>
 </div>
 </div>
 </section>
