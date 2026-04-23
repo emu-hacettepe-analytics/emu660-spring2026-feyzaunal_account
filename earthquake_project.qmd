@@ -33,6 +33,7 @@ https://deprem.afad.gov.tr/event-catalog
 
 library(readxl)
 
+# ham veri okunur (filtre yok)
 deprem_data_raw <- read_excel("~/Desktop/R/data.xlsx")
 
 cat(
@@ -43,6 +44,7 @@ cat(
   ncol(deprem_data_raw),
   " variables."
 )
+
 ```
 
 ## 2.3 Reason of Choice
