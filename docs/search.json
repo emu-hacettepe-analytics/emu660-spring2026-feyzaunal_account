@@ -270,7 +270,7 @@
     "href": "index.html#trend-analysis",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "3.2 Trend Analysis",
-    "text": "3.2 Trend Analysis\nThis section examines how earthquake frequency has changed over time.\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
+    "text": "3.2 Trend Analysis\nThis section examines how earthquake frequency has changed over time in both Türkiye and globally.\nThe comparison allows us to determine whether changes in Türkiye are part of a global trend or driven by regional seismic activity.\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\n\nThe comparison shows that global earthquake activity remains relatively stable over time, while Türkiye exhibits a noticeable increase after 2023. This indicates that recent seismic activity in Türkiye is influenced by regional factors rather than global patterns."
   },
   {
     "objectID": "index.html#model-fitting",
@@ -291,6 +291,6 @@
     "href": "index.html#global-data",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "2.5 Global Data",
-    "text": "2.5 Global Data"
+    "text": "2.5 Global Data\nIn order to compare seismic activity in Türkiye with global trends, earthquake data from the United States Geological Survey (USGS) was used.\nThe global dataset includes earthquake records between 2020 and 2026. Relevant variables such as date, magnitude, latitude, and longitude were extracted and standardized to match the Türkiye dataset.\nAll datasets were combined into a single dataset with an additional variable indicating the region (Türkiye or World)."
   }
 ]

@@ -98,6 +98,12 @@ After preprocessing, the final dataset contains 25,668 observations.
 
 ## 2.5 Global Data
 
+In order to compare seismic activity in Türkiye with global trends, earthquake data from the United States Geological Survey (USGS) was used.
+
+The global dataset includes earthquake records between 2020 and 2026. Relevant variables such as date, magnitude, latitude, and longitude were extracted and standardized to match the Türkiye dataset.
+
+All datasets were combined into a single dataset with an additional variable indicating the region (Türkiye or World).
+
 ```{r global-data}
 #| echo: false
 #| message: false
@@ -162,7 +168,10 @@ ggplot(deprem_data, aes(x = Magnitude)) +
 
 ## 3.2 Trend Analysis
 
-This section examines how earthquake frequency has changed over time.
+This section examines how earthquake frequency has changed over time in both Türkiye and globally.
+
+The comparison allows us to determine whether changes in Türkiye are part of a global trend or driven by regional seismic activity.
+
 
 ```{r trend-analysis}
 #| echo: false
@@ -184,6 +193,8 @@ ggplot(trend_data, aes(x = Year, y = n, color = Region, group = Region)) +
   ) +
   theme_minimal()
 ```
+
+The comparison shows that global earthquake activity remains relatively stable over time, while Türkiye exhibits a noticeable increase after 2023. This indicates that recent seismic activity in Türkiye is influenced by regional factors rather than global patterns.
 
 ## 3.3 Model Fitting
 

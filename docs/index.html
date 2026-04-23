@@ -218,6 +218,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="global-data" class="level2">
 <h2 class="anchored" data-anchor-id="global-data">2.5 Global Data</h2>
+<p>In order to compare seismic activity in Türkiye with global trends, earthquake data from the United States Geological Survey (USGS) was used.</p>
+<p>The global dataset includes earthquake records between 2020 and 2026. Relevant variables such as date, magnitude, latitude, and longitude were extracted and standardized to match the Türkiye dataset.</p>
+<p>All datasets were combined into a single dataset with an additional variable indicating the region (Türkiye or World).</p>
 </section>
 </section>
 <section id="analysis" class="level1">
@@ -237,7 +240,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="trend-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="trend-analysis">3.2 Trend Analysis</h2>
-<p>This section examines how earthquake frequency has changed over time.</p>
+<p>This section examines how earthquake frequency has changed over time in both Türkiye and globally.</p>
+<p>The comparison allows us to determine whether changes in Türkiye are part of a global trend or driven by regional seismic activity.</p>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
@@ -251,6 +255,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p>The comparison shows that global earthquake activity remains relatively stable over time, while Türkiye exhibits a noticeable increase after 2023. This indicates that recent seismic activity in Türkiye is influenced by regional factors rather than global patterns.</p>
 </section>
 <section id="model-fitting" class="level2">
 <h2 class="anchored" data-anchor-id="model-fitting">3.3 Model Fitting</h2>
