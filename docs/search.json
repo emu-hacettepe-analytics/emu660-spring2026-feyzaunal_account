@@ -263,7 +263,7 @@
     "href": "index.html#exploratory-data-analysis",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "3.1 Exploratory Data Analysis",
-    "text": "3.1 Exploratory Data Analysis\nIn this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.\n\n\n\n\n\n\n\n\n\n```"
+    "text": "3.1 Exploratory Data Analysis\nIn this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes."
   },
   {
     "objectID": "index.html#trend-analysis",

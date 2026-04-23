@@ -153,38 +153,27 @@ combined_data <- bind_rows(deprem_data, world_data)
 
 In this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.
 
-```{r magnitude-year-mean-ci}
+```{r magnitude-boxplot}
 #| echo: false
 #| warning: false
 #| message: false
 
-library(dplyr)
 library(ggplot2)
+library(dplyr)
 
-yearly_stats <- combined_data %>%
-  mutate(Year = as.integer(format(Date, "%Y"))) %>%
-  group_by(Region, Year) %>%
-  summarise(
-    n = n(),
-    mean_mag = mean(Magnitude, na.rm = TRUE),
-    sd_mag = sd(Magnitude, na.rm = TRUE),
-    se = sd_mag / sqrt(n),
-    ci = 1.96 * se,
-    .groups = "drop"
-  )
-
-ggplot(yearly_stats, aes(x = Year, y = mean_mag, color = Region, group = Region)) +
-  geom_line(linewidth = 1.2) +
-  geom_point(size = 2) +
-  geom_errorbar(aes(ymin = mean_mag - ci, ymax = mean_mag + ci), width = 0.2, alpha = 0.7) +
-  scale_x_continuous(breaks = 2020:2026) +
+ggplot(combined_data, aes(x = Region, y = Magnitude, fill = Region)) +
+  geom_boxplot(alpha = 0.7, outlier.alpha = 0.3) +
   labs(
-    title = "Average Earthquake Magnitude by Year (with 95% CI)",
-    x = "Year",
-    y = "Average Magnitude"
+    title = "Distribution of Earthquake Magnitudes: Türkiye vs World",
+    x = "",
+    y = "Magnitude"
   ) +
-  theme_minimal()
-```
+  scale_fill_manual(values = c("Türkiye" = "#D55E00", "World" = "#0072B2")) +
+  theme_minimal(base_size = 13) +
+  theme(
+    legend.position = "none",
+    plot.title = element_text(face = "bold")
+  )
 ```
 
 ## 3.2 Trend Analysis
