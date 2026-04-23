@@ -62,7 +62,11 @@ The raw data required several preparation steps before analysis:
 - The `Magnitude` column was converted into numeric format.
 - Only earthquakes between 2020 and 2026 were included.
 - Only earthquakes with magnitude greater than 3 were included.
+
 ```{r data-preparation}
+#| echo: false
+#| message: false
+#| warning: false
 library(readxl)
 library(dplyr)
 
