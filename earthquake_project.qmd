@@ -51,7 +51,6 @@ cat(
 
 Türkiye is a country deeply affected by seismic activities due to its geographical location on major fault lines. The 2023 Kahramanmaraş earthquakes highlighted the importance of data-driven disaster management. I chose this dataset to analyze earthquake patterns using analytical tools and visualizations.
 
-
 ## 2.4 Preprocessing
 
 The raw data required several preparation steps before analysis:
@@ -94,7 +93,6 @@ deprem_data <- deprem_data %>%
 ```
 
 After preprocessing, the final dataset contains 25,668 observations.
-
 
 ## 2.5 Global Data
 
@@ -147,16 +145,16 @@ deprem_data <- deprem_data %>%
 combined_data <- bind_rows(deprem_data, world_data)
 ```
 
+
 # 3. Analysis
 
 ## 3.1 Exploratory Data Analysis
 
 In this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.
 
-```{r boxplot-year-facet}
+```{r violin-box}
 #| echo: false
 #| warning: false
-#| message: false
 
 library(dplyr)
 library(ggplot2)
@@ -165,16 +163,24 @@ combined_data <- combined_data %>%
   mutate(Year = as.integer(format(Date, "%Y")))
 
 ggplot(combined_data, aes(x = Region, y = Magnitude, fill = Region)) +
-  geom_boxplot(outlier.alpha = 0.2) +
+  geom_violin(alpha = 0.4, trim = FALSE) +
+  geom_boxplot(width = 0.15, outlier.alpha = 0.2, color = "black") +
   facet_wrap(~Year) +
+  scale_fill_manual(values = c("Türkiye" = "#E69F00", "World" = "#0072B2")) +
   labs(
-    title = "Yearly Distribution of Earthquake Magnitudes",
+    title = "Earthquake Magnitude Distribution by Year and Region",
     x = "",
     y = "Magnitude"
   ) +
-  scale_fill_manual(values = c("Türkiye" = "#D55E00", "World" = "#0072B2")) +
-  theme_minimal()
+  theme_minimal(base_size = 13) +
+  theme(
+    strip.text = element_text(face = "bold"),
+    legend.position = "none",
+    plot.title = element_text(face = "bold")
+  )
 ```
+
+The combined violin and boxplot visualization provides a detailed view of the distribution of earthquake magnitudes across years and regions. While the median values remain relatively stable, the shape of the distributions reveals differences in variability and the presence of high-magnitude outliers in global seismic activity.
 
 ## 3.2 Trend Analysis
 

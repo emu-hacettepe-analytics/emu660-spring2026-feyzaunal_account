@@ -263,7 +263,7 @@
     "href": "index.html#exploratory-data-analysis",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "3.1 Exploratory Data Analysis",
-    "text": "3.1 Exploratory Data Analysis\nIn this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes."
+    "text": "3.1 Exploratory Data Analysis\nIn this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.\n\n\n\n\n\n\n\n\n\nThe combined violin and boxplot visualization provides a detailed view of the distribution of earthquake magnitudes across years and regions. While the median values remain relatively stable, the shape of the distributions reveals differences in variability and the presence of high-magnitude outliers in global seismic activity."
   },
   {
     "objectID": "index.html#trend-analysis",
