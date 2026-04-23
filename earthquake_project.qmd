@@ -155,6 +155,8 @@ In this section, I perform an initial exploration of the earthquake data by visu
 
 ```{r}
 #| echo: false
+#| warning: false
+#| message: false
 
 library(ggplot2)
 
