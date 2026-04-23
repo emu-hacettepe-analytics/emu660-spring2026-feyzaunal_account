@@ -270,7 +270,7 @@
     "href": "index.html#trend-analysis",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "3.2 Trend Analysis",
-    "text": "3.2 Trend Analysis\nThis section examines how earthquake frequency has changed over time."
+    "text": "3.2 Trend Analysis\nThis section examines how earthquake frequency has changed over time.\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
   },
   {
     "objectID": "index.html#model-fitting",

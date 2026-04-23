@@ -106,7 +106,7 @@ After preprocessing, the final dataset contains 25,668 observations.
 library(readr)
 library(dplyr)
 
-# Dünya verilerini oku 
+# Dünya verilerini oku
 eq2020 <- read_csv("~/Desktop/R/usgs_2020.csv")
 eq2021 <- read_csv("~/Desktop/R/usgs_2021.csv")
 eq2022 <- read_csv("~/Desktop/R/usgs_2022.csv")
@@ -118,7 +118,7 @@ eq2026 <- read_csv("~/Desktop/R/usgs_2026.csv")
 # Birleştir
 world_data <- bind_rows(eq2020, eq2021, eq2022, eq2023, eq2024, eq2025, eq2026)
 
-# ormatla
+# 🔥 FORMATLA + FİLTRE (EN DOĞRU HAL)
 world_data <- world_data %>%
   mutate(
     Date = as.POSIXct(time, format = "%Y-%m-%dT%H:%M:%OSZ", tz = "UTC"),
@@ -127,13 +127,16 @@ world_data <- world_data %>%
     Longitude = as.numeric(longitude),
     Region = "World"
   ) %>%
-  filter(!is.na(Magnitude), Magnitude > 3)
+  filter(
+    !is.na(Magnitude),
+    Magnitude > 2   # 🔥 Türkiye ile aynı olmalı
+  )
 
 # Türkiye verisini etiketle
 deprem_data <- deprem_data %>%
   mutate(Region = "Türkiye")
 
-# datayı birleştir
+# Birleştir
 combined_data <- bind_rows(deprem_data, world_data)
 ```
 
@@ -161,24 +164,25 @@ ggplot(deprem_data, aes(x = Magnitude)) +
 
 This section examines how earthquake frequency has changed over time.
 
-```{r}
+```{r trend-analysis}
 #| echo: false
 
 library(dplyr)
 library(ggplot2)
 
-yearly_counts <- deprem_data %>%
+trend_data <- combined_data %>%
   mutate(Year = format(Date, "%Y")) %>%
-  count(Year)
+  count(Region, Year)
 
-ggplot(yearly_counts, aes(x = Year, y = n, group = 1)) +
-  geom_line() +
-  geom_point() +
+ggplot(trend_data, aes(x = Year, y = n, color = Region, group = Region)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2) +
   labs(
-    title = "Number of Earthquakes by Year",
+    title = "Earthquake Trend: Türkiye vs World",
     x = "Year",
-    y = "Count"
-  )
+    y = "Number of Earthquakes"
+  ) +
+  theme_minimal()
 ```
 
 ## 3.3 Model Fitting
