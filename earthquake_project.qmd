@@ -64,22 +64,37 @@ The raw data required several preparation steps before analysis:
 - Only earthquakes with magnitude greater than 3 were included.
 
 ```{r data-preparation}
+#| echo: false
+#| message: false
+#| warning: false
+
 library(readxl)
 library(dplyr)
+library(lubridate)
 
+# veriyi oku
 deprem_data <- read_excel("~/Desktop/R/data.xlsx")
 
-deprem_data$Date <- as.POSIXct(deprem_data$Date)
+# 🔥 DATE DÜZELTME (EN KRİTİK)
+deprem_data$Date <- parse_date_time(
+  deprem_data$Date,
+  orders = c("dmy HMS", "ymd HMS", "dmy HM", "ymd HM", "dmy", "ymd")
+)
 
+# numeric dönüşüm
 deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
 
+# filtre
 deprem_data <- deprem_data %>%
   filter(
+    !is.na(Date),
     Date >= as.POSIXct("2020-01-01"),
-    Date <= as.POSIXct("2026-12-31")
-  ) %>%
-  filter(!is.na(Magnitude), Magnitude > 3)
+    Date <= as.POSIXct("2026-12-31"),
+    !is.na(Magnitude),
+    Magnitude > 3
+  )
 
+# çıktı
 cat("Final dataset contains", nrow(deprem_data), "observations.")
 ```
 
