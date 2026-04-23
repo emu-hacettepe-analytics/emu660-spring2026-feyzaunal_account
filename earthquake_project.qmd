@@ -66,35 +66,30 @@ The raw data required several preparation steps before analysis:
 library(readxl)
 library(dplyr)
 
-# 1. Veriyi oku
 deprem_data <- read_excel("~/Desktop/R/data.xlsx")
 
-# 2. Date düzelt (senin formata göre)
+# Date parse
 deprem_data$Date <- as.POSIXct(
   deprem_data$Date,
   format = "%d/%m/%Y %H:%M:%S"
 )
 
-# 3. Year çıkar
+# Year çıkar
 deprem_data$Year <- as.numeric(format(deprem_data$Date, "%Y"))
 
-# 4. Magnitude numeric yap
+# Magnitude numeric
 deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
 
-# 🔥 5. FİLTRE (EN ÖNEMLİ DÜZELTME)
+# 🔥 DÜZELTME BURADA
 deprem_data <- deprem_data %>%
   filter(
     Year >= 2020,
     Year <= 2026,
     !is.na(Magnitude),
-    Magnitude > 2   # 🔥 3 değil!
+    Magnitude > 2   # ❗ 3 yerine 2
   )
 
-# 6. Sonuç
 cat("Final dataset contains", nrow(deprem_data), "observations.\n")
-
-# 7. Kontrol
-head(deprem_data)
 ```
 
 ## 2.5 Global Data
