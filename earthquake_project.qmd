@@ -60,7 +60,7 @@ The raw data required several preparation steps before analysis:
 - The `Date` column was converted into `POSIXct` format.
 - The `Magnitude` column was converted into numeric format.
 - Only earthquakes between 2020 and 2026 were included.
-- Only earthquakes with magnitude greater than 3 were included.
+- Only earthquakes with magnitude greater than 2 were included.
 
 ```{r data-preparation}
 #| echo: false
@@ -84,7 +84,6 @@ deprem_data$Year <- as.numeric(format(deprem_data$Date, "%Y"))
 # Magnitude numeric
 deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
 
-# 🔥 DÜZELTME BURADA
 deprem_data <- deprem_data %>%
   filter(
     Year >= 2020,
@@ -93,6 +92,7 @@ deprem_data <- deprem_data %>%
     Magnitude > 2   # ❗ 3 yerine 2
   )
 ```
+
 After preprocessing, the final dataset contains 25,668 observations.
 
 
