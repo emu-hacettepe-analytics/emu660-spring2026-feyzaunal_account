@@ -131,26 +131,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-overview-and-scope" id="toc-project-overview-and-scope" class="nav-link active" data-scroll-target="#project-overview-and-scope">1. Project Overview and Scope</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">2. Data</a>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#project-overview-and-scope" id="toc-project-overview-and-scope" class="nav-link" data-scroll-target="#project-overview-and-scope">1. Project Overview and Scope</a>
   <ul class="collapse">
+  <li><a href="#data-and-preprocessing" id="toc-data-and-preprocessing" class="nav-link" data-scroll-target="#data-and-preprocessing">2. Data and Preprocessing</a></li>
   <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">2.1 Data Source</a></li>
-  <li><a href="#general-information-about-data" id="toc-general-information-about-data" class="nav-link" data-scroll-target="#general-information-about-data">2.2 General Information About Data</a></li>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link" data-scroll-target="#dataset-description">2.2 Dataset Description</a></li>
   <li><a href="#reason-of-choice" id="toc-reason-of-choice" class="nav-link" data-scroll-target="#reason-of-choice">2.3 Reason of Choice</a></li>
-  <li><a href="#preprocessing" id="toc-preprocessing" class="nav-link" data-scroll-target="#preprocessing">2.4 Preprocessing</a></li>
-  <li><a href="#global-data" id="toc-global-data" class="nav-link" data-scroll-target="#global-data">2.5 Global Data</a></li>
+  <li><a href="#preprocessing-steps" id="toc-preprocessing-steps" class="nav-link" data-scroll-target="#preprocessing-steps">2.4 Preprocessing Steps</a></li>
+  <li><a href="#global-data-integration" id="toc-global-data-integration" class="nav-link" data-scroll-target="#global-data-integration">2.5 Global Data Integration</a></li>
   </ul></li>
   <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">3. Analysis</a>
   <ul class="collapse">
   <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">3.1 Exploratory Data Analysis</a></li>
   <li><a href="#trend-analysis" id="toc-trend-analysis" class="nav-link" data-scroll-target="#trend-analysis">3.2 Trend Analysis</a></li>
-  <li><a href="#model-fitting" id="toc-model-fitting" class="nav-link" data-scroll-target="#model-fitting">3.3 Model Fitting</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">3.4 Results</a></li>
+  <li><a href="#methodological-considerations" id="toc-methodological-considerations" class="nav-link" data-scroll-target="#methodological-considerations">3.3 Methodological Considerations</a></li>
+  <li><a href="#results-interpretation" id="toc-results-interpretation" class="nav-link" data-scroll-target="#results-interpretation">3.4 Results Interpretation</a></li>
   <li><a href="#spatial-analysis" id="toc-spatial-analysis" class="nav-link" data-scroll-target="#spatial-analysis">3.5 Spatial Analysis</a></li>
   </ul></li>
   <li><a href="#results-and-key-takeaways" id="toc-results-and-key-takeaways" class="nav-link" data-scroll-target="#results-and-key-takeaways">4. Results and Key Takeaways</a>
   <ul class="collapse">
-  <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download">Data Download</a></li>
+  <li><a href="#main-findings" id="toc-main-findings" class="nav-link" data-scroll-target="#main-findings">4.1 Main Findings</a></li>
+  <li><a href="#implications" id="toc-implications" class="nav-link" data-scroll-target="#implications">4.2 Implications</a></li>
+  <li><a href="#limitations-and-future-work" id="toc-limitations-and-future-work" class="nav-link" data-scroll-target="#limitations-and-future-work">4.3 Limitations and Future Work</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">5. Conclusion</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -183,52 +187,51 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Türkiye is located on major fault lines and is highly prone to seismic activity. This project analyzes earthquake data between 2020 and 2026 using data obtained from AFAD. The aim is to identify temporal trends and spatial patterns in earthquake occurrences.</p>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>This study analyzes earthquake activity in Türkiye between 2020 and 2026 using data obtained from AFAD, with a comparative perspective based on global earthquake data from the United States Geological Survey (USGS). The objective is to identify temporal trends and spatial patterns in seismic activity.</p>
+<p>Exploratory analysis shows that earthquake magnitudes remain relatively stable over time for both Türkiye and global datasets. In contrast, frequency-based analysis reveals significant variation, particularly in Türkiye, where a noticeable increase in earthquake occurrences is observed after 2023. Spatial analysis demonstrates that high-magnitude earthquakes are concentrated along major tectonic boundaries such as the Pacific Ring of Fire, while Türkiye’s seismic activity is more localized.</p>
+<p>The findings suggest that earthquake frequency is a more effective metric than magnitude for understanding temporal trends, and that recent changes in Türkiye are primarily driven by regional tectonic dynamics.</p>
+</section>
 <section id="project-overview-and-scope" class="level1">
 <h1>1. Project Overview and Scope</h1>
-<p>In this project, I analyze earthquake data from Türkiye obtained from AFAD (Disaster and Emergency Management Presidency) for the years 2020-2026.</p>
-<p>My aim is to show, using analytical methods, how seismic activity has changed, particularly after the 2023 Kahramanmaraş earthquakes, and in which regions it has clustered.</p>
+<p>Türkiye is located on major tectonic fault lines and is highly prone to seismic activity. Understanding earthquake patterns is essential for risk assessment and disaster preparedness.</p>
+<p>This study analyzes earthquake data recorded between 2020 and 2026 using data obtained from AFAD. The primary objective is to identify temporal trends and spatial patterns in earthquake occurrences.</p>
+<p>Special attention is given to the changes observed after the 2023 Kahramanmaraş earthquakes, which represent a significant seismic event in Türkiye. The study aims to determine whether observed patterns are driven by regional dynamics or reflect broader global seismic behavior.</p>
+<section id="data-and-preprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-preprocessing">2. Data and Preprocessing</h2>
 </section>
-<section id="data" class="level1">
-<h1>2. Data</h1>
-<p>The dataset was provided by AFAD and consists of 9 columns.</p>
-<p>The key columns are: <code>Magnitude</code>, <code>Latitude</code>, <code>Longitude</code>, and <code>Date</code>.</p>
 <section id="data-source" class="level2">
 <h2 class="anchored" data-anchor-id="data-source">2.1 Data Source</h2>
-<p>https://deprem.afad.gov.tr/event-catalog</p>
+<p>The dataset used in this study was obtained from AFAD (Disaster and Emergency Management Presidency). To enable comparative analysis, global earthquake data from the United States Geological Survey (USGS) was also incorporated.</p>
 </section>
-<section id="general-information-about-data" class="level2">
-<h2 class="anchored" data-anchor-id="general-information-about-data">2.2 General Information About Data</h2>
-<p>This dataset contains earthquake records in Türkiye between 2020 and 2026, sourced from AFAD. The raw dataset includes 124701 observations and 9 variables.</p>
+<section id="dataset-description" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-description">2.2 Dataset Description</h2>
+<p>The dataset contains earthquake records in Türkiye between 2020 and 2026 and includes 124,701 observations and 9 variables. Key variables used in the analysis include magnitude, latitude, longitude, and date.</p>
 </section>
 <section id="reason-of-choice" class="level2">
 <h2 class="anchored" data-anchor-id="reason-of-choice">2.3 Reason of Choice</h2>
-<p>Türkiye is a country deeply affected by seismic activities due to its geographical location on major fault lines. The 2023 Kahramanmaraş earthquakes highlighted the importance of data-driven disaster management. I chose this dataset to analyze earthquake patterns using analytical tools and visualizations.</p>
+<p>Türkiye is a country deeply affected by seismic activity due to its geographical location on major fault lines. The 2023 Kahramanmaraş earthquakes highlighted the importance of data-driven disaster management. This dataset was selected to analyze earthquake patterns using analytical tools and visualizations.</p>
 </section>
-<section id="preprocessing" class="level2">
-<h2 class="anchored" data-anchor-id="preprocessing">2.4 Preprocessing</h2>
-<p>The raw data required several preparation steps before analysis:</p>
-<ul>
-<li>The dataset was imported from an Excel file using the <code>readxl</code> library.</li>
-<li>The <code>Date</code> column was converted into <code>POSIXct</code> format.</li>
-<li>The <code>Magnitude</code> column was converted into numeric format.</li>
-<li>Only earthquakes between 2020 and 2026 were included.</li>
-<li>Only earthquakes with magnitude greater than 2 were included.</li>
-</ul>
+<section id="preprocessing-steps" class="level2">
+<h2 class="anchored" data-anchor-id="preprocessing-steps">2.4 Preprocessing Steps</h2>
+<p>The raw data required several preprocessing steps before analysis. The date variable was converted into POSIXct format, and magnitude values were transformed into numeric format. Only earthquakes between 2020 and 2026 were included, and events with magnitude greater than 2 were selected to remove insignificant observations.</p>
+<p>These steps ensured that the dataset was clean, consistent, and suitable for analysis.</p>
 <p>After preprocessing, the final dataset contains 25,668 observations.</p>
 </section>
-<section id="global-data" class="level2">
-<h2 class="anchored" data-anchor-id="global-data">2.5 Global Data</h2>
-<p>In order to compare seismic activity in Türkiye with global trends, earthquake data from the United States Geological Survey (USGS) was used.</p>
-<p>The global dataset includes earthquake records between 2020 and 2026. Relevant variables such as date, magnitude, latitude, and longitude were extracted and standardized to match the Türkiye dataset.</p>
-<p>All datasets were combined into a single dataset with an additional variable indicating the region (Türkiye or World).</p>
+<section id="global-data-integration" class="level2">
+<h2 class="anchored" data-anchor-id="global-data-integration">2.5 Global Data Integration</h2>
+<p>Global earthquake data from USGS was standardized and merged with the Türkiye dataset. Both datasets were combined into a single structure with a categorical variable indicating the region (Türkiye or World), allowing direct comparison between regional and global seismic activity.</p>
 </section>
 </section>
 <section id="analysis" class="level1">
 <h1>3. Analysis</h1>
 <section id="exploratory-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="exploratory-data-analysis">3.1 Exploratory Data Analysis</h2>
-<p>In this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.</p>
+<p>An exploratory data analysis was conducted to examine the distribution of earthquake magnitudes across years and regions.</p>
+<p>The visualization shows that median magnitude values remain relatively stable over time for both Türkiye and global datasets. This indicates that magnitude does not exhibit strong temporal variation.</p>
+<p>However, global data displays a wider spread and a higher presence of extreme values. These outliers are associated with large earthquakes occurring in highly active tectonic regions worldwide. In contrast, earthquake magnitudes in Türkiye are more concentrated within a narrower range.</p>
+<p>While magnitude distributions remain stable, this does not imply that seismic activity is constant. To better understand temporal changes, it is necessary to examine earthquake frequency.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -238,12 +241,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>The combined violin and boxplot visualization provides a detailed view of the distribution of earthquake magnitudes across years and regions. While the median values remain relatively stable, the shape of the distributions reveals differences in variability and the presence of high-magnitude outliers in global seismic activity.</p>
 </section>
 <section id="trend-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="trend-analysis">3.2 Trend Analysis</h2>
-<p>Unlike magnitude, earthquake frequency provides a more meaningful indicator of temporal changes in seismic activity. While earthquake magnitudes remain relatively stable over time, the number of earthquake events shows more noticeable variation.</p>
-<p>The frequency analysis allows us to compare Türkiye and global seismic activity in terms of how often earthquakes occur over time.</p>
+<p>Building on the findings from magnitude analysis, frequency-based analysis provides a clearer understanding of how seismic activity evolves over time.</p>
+<p>The results show that global earthquake activity remains relatively stable across the observed period. In contrast, Türkiye exhibits a noticeable increase in the number of earthquake events, particularly after 2023. This increase is strongly associated with major seismic events and aftershock sequences.</p>
+<p>This highlights an important distinction: magnitude reflects the physical characteristics of earthquakes, whereas frequency captures variations in seismic activity levels.</p>
+<p>The observed increase in Türkiye suggests that recent changes are driven by regional tectonic dynamics rather than global trends. However, frequency alone does not fully explain these changes. Spatial analysis is required to identify the geographic concentration of seismic activity.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -254,17 +258,22 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="model-fitting" class="level2">
-<h2 class="anchored" data-anchor-id="model-fitting">3.3 Model Fitting</h2>
-<p>For the advanced analysis part, I may explore clustering methods such as K-means based on latitude and longitude to identify geographic hotspots of seismic activity. I may also examine simple time-based aggregations to better understand changes in earthquake frequency over time.</p>
+<section id="methodological-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="methodological-considerations">3.3 Methodological Considerations</h2>
+<p>This study focuses on descriptive and exploratory analysis. Magnitude was found to be limited in identifying temporal trends, while frequency provided more meaningful insights.</p>
+<p>Advanced modeling techniques such as clustering and spatial analysis could further enhance the understanding of seismic patterns and are recommended for future research.</p>
 </section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">3.4 Results</h2>
-<p>Initial findings suggest that seismic activity in Türkiye is concentrated along major fault lines and that earthquake frequency varies across years.</p>
+<section id="results-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="results-interpretation">3.4 Results Interpretation</h2>
+<p>The combined findings from magnitude, frequency, and spatial analysis reveal a coherent pattern.</p>
+<p>Magnitude remains stable over time, while frequency shows significant variation, particularly in Türkiye after 2023. This indicates that changes in seismic activity are not related to earthquake strength but to the number of events.</p>
+<p>Spatial patterns further explain these differences, showing that seismic activity is concentrated in specific regions rather than being uniformly distributed.</p>
 </section>
 <section id="spatial-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="spatial-analysis">3.5 Spatial Analysis</h2>
-<p>In this section, the spatial distribution of high-magnitude earthquakes is analyzed to identify geographic patterns and potential outliers that influence global seismic activity.</p>
+<p>The spatial analysis reveals that high-magnitude earthquakes are concentrated along major tectonic boundaries, particularly in regions such as the Pacific Ring of Fire.</p>
+<p>In contrast, seismic activity in Türkiye is primarily concentrated along the North Anatolian Fault and the East Anatolian Fault. These regions are characterized by moderate but frequent earthquakes.</p>
+<p>This spatial distribution explains the differences observed in previous analyses and confirms that global seismic patterns are strongly influenced by specific high-activity regions.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -274,19 +283,26 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>The spatial distribution of high-magnitude earthquakes shows that global seismic activity is concentrated along major tectonic boundaries, particularly in regions such as the Pacific Ring of Fire. These regions experience frequent high-magnitude earthquakes, which act as outliers and significantly influence the overall distribution of global earthquake magnitudes.</p>
-<p>In contrast, Türkiye’s seismic activity is more localized and primarily concentrated along major fault lines. Earthquakes in Türkiye are generally of moderate magnitude, which explains the differences observed between regional and global magnitude distributions.</p>
 </section>
 </section>
 <section id="results-and-key-takeaways" class="level1">
 <h1>4. Results and Key Takeaways</h1>
-<p>The frequency of earthquakes in Türkiye shows a noticeable increase after 2023.</p>
-<p>Seismic activities are not uniformly distributed but are heavily clustered along the East and North Anatolian fault lines.</p>
-<p>These patterns can provide useful insights for regional risk assessment and disaster preparedness.</p>
-<section id="data-download" class="level3">
-<h3 class="anchored" data-anchor-id="data-download">Data Download</h3>
-<p>Click the link below to download the processed dataset for reproducibility:</p>
-<p><a href="deprem_verisi.RData">Download deprem_verisi.RData</a></p>
+<section id="main-findings" class="level2">
+<h2 class="anchored" data-anchor-id="main-findings">4.1 Main Findings</h2>
+<p>Earthquake magnitudes remain relatively stable over time, while earthquake frequency varies significantly, particularly in Türkiye after 2023.</p>
+</section>
+<section id="implications" class="level2">
+<h2 class="anchored" data-anchor-id="implications">4.2 Implications</h2>
+<p>Frequency-based analysis provides a more accurate understanding of seismic trends than magnitude. These findings can support improved risk assessment and disaster preparedness strategies.</p>
+</section>
+<section id="limitations-and-future-work" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-and-future-work">4.3 Limitations and Future Work</h2>
+<p>The study is limited to descriptive analysis. Future work may include advanced modeling techniques such as clustering and predictive analysis to further investigate seismic patterns.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">5. Conclusion</h2>
+<p>This study demonstrates that earthquake frequency, rather than magnitude, is a more effective indicator of temporal changes in seismic activity. The findings show that seismic activity in Türkiye has increased significantly after 2023 due to regional tectonic processes.</p>
+<p>Spatial analysis confirms that global seismic activity is concentrated along major tectonic boundaries, while Türkiye exhibits more localized patterns. Together, these insights provide a comprehensive understanding of earthquake dynamics and highlight the importance of regional analysis in seismic studies.</p>
 
 
 </section>

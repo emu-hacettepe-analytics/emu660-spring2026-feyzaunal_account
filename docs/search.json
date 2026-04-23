@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "",
-    "text": "Türkiye is located on major fault lines and is highly prone to seismic activity. This project analyzes earthquake data between 2020 and 2026 using data obtained from AFAD. The aim is to identify temporal trends and spatial patterns in earthquake occurrences."
+    "text": "This study analyzes earthquake activity in Türkiye between 2020 and 2026 using data obtained from AFAD, with a comparative perspective based on global earthquake data from the United States Geological Survey (USGS). The objective is to identify temporal trends and spatial patterns in seismic activity.\nExploratory analysis shows that earthquake magnitudes remain relatively stable over time for both Türkiye and global datasets. In contrast, frequency-based analysis reveals significant variation, particularly in Türkiye, where a noticeable increase in earthquake occurrences is observed after 2023. Spatial analysis demonstrates that high-magnitude earthquakes are concentrated along major tectonic boundaries such as the Pacific Ring of Fire, while Türkiye’s seismic activity is more localized.\nThe findings suggest that earthquake frequency is a more effective metric than magnitude for understanding temporal trends, and that recent changes in Türkiye are primarily driven by regional tectonic dynamics."
   },
   {
     "objectID": "assingment-2.html",
@@ -235,7 +235,7 @@
     "href": "index.html#data-source",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "2.1 Data Source",
-    "text": "2.1 Data Source\nhttps://deprem.afad.gov.tr/event-catalog"
+    "text": "2.1 Data Source\nThe dataset used in this study was obtained from AFAD (Disaster and Emergency Management Presidency). To enable comparative analysis, global earthquake data from the United States Geological Survey (USGS) was also incorporated."
   },
   {
     "objectID": "index.html#general-information-about-data",
@@ -249,7 +249,7 @@
     "href": "index.html#reason-of-choice",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "2.3 Reason of Choice",
-    "text": "2.3 Reason of Choice\nTürkiye is a country deeply affected by seismic activities due to its geographical location on major fault lines. The 2023 Kahramanmaraş earthquakes highlighted the importance of data-driven disaster management. I chose this dataset to analyze earthquake patterns using analytical tools and visualizations."
+    "text": "2.3 Reason of Choice\nTürkiye is a country deeply affected by seismic activity due to its geographical location on major fault lines. The 2023 Kahramanmaraş earthquakes highlighted the importance of data-driven disaster management. This dataset was selected to analyze earthquake patterns using analytical tools and visualizations."
   },
   {
     "objectID": "index.html#preprocessing",
@@ -263,14 +263,14 @@
     "href": "index.html#exploratory-data-analysis",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "3.1 Exploratory Data Analysis",
-    "text": "3.1 Exploratory Data Analysis\nIn this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.\n\n\n\n\n\n\n\n\n\nThe combined violin and boxplot visualization provides a detailed view of the distribution of earthquake magnitudes across years and regions. While the median values remain relatively stable, the shape of the distributions reveals differences in variability and the presence of high-magnitude outliers in global seismic activity."
+    "text": "3.1 Exploratory Data Analysis\nAn exploratory data analysis was conducted to examine the distribution of earthquake magnitudes across years and regions.\nThe visualization shows that median magnitude values remain relatively stable over time for both Türkiye and global datasets. This indicates that magnitude does not exhibit strong temporal variation.\nHowever, global data displays a wider spread and a higher presence of extreme values. These outliers are associated with large earthquakes occurring in highly active tectonic regions worldwide. In contrast, earthquake magnitudes in Türkiye are more concentrated within a narrower range.\nWhile magnitude distributions remain stable, this does not imply that seismic activity is constant. To better understand temporal changes, it is necessary to examine earthquake frequency."
   },
   {
     "objectID": "index.html#trend-analysis",
     "href": "index.html#trend-analysis",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "3.2 Trend Analysis",
-    "text": "3.2 Trend Analysis\nUnlike magnitude, earthquake frequency provides a more meaningful indicator of temporal changes in seismic activity. While earthquake magnitudes remain relatively stable over time, the number of earthquake events shows more noticeable variation.\nThe frequency analysis allows us to compare Türkiye and global seismic activity in terms of how often earthquakes occur over time."
+    "text": "3.2 Trend Analysis\nBuilding on the findings from magnitude analysis, frequency-based analysis provides a clearer understanding of how seismic activity evolves over time.\nThe results show that global earthquake activity remains relatively stable across the observed period. In contrast, Türkiye exhibits a noticeable increase in the number of earthquake events, particularly after 2023. This increase is strongly associated with major seismic events and aftershock sequences.\nThis highlights an important distinction: magnitude reflects the physical characteristics of earthquakes, whereas frequency captures variations in seismic activity levels.\nThe observed increase in Türkiye suggests that recent changes are driven by regional tectonic dynamics rather than global trends. However, frequency alone does not fully explain these changes. Spatial analysis is required to identify the geographic concentration of seismic activity."
   },
   {
     "objectID": "index.html#model-fitting",
@@ -298,6 +298,83 @@
     "href": "index.html#spatial-analysis",
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "3.5 Spatial Analysis",
-    "text": "3.5 Spatial Analysis\nIn this section, the spatial distribution of high-magnitude earthquakes is analyzed to identify geographic patterns and potential outliers that influence global seismic activity.\n\n\n\n\n\n\n\n\n\nThe spatial distribution of high-magnitude earthquakes shows that global seismic activity is concentrated along major tectonic boundaries, particularly in regions such as the Pacific Ring of Fire. These regions experience frequent high-magnitude earthquakes, which act as outliers and significantly influence the overall distribution of global earthquake magnitudes.\nIn contrast, Türkiye’s seismic activity is more localized and primarily concentrated along major fault lines. Earthquakes in Türkiye are generally of moderate magnitude, which explains the differences observed between regional and global magnitude distributions."
+    "text": "3.5 Spatial Analysis\nThe spatial analysis reveals that high-magnitude earthquakes are concentrated along major tectonic boundaries, particularly in regions such as the Pacific Ring of Fire.\nIn contrast, seismic activity in Türkiye is primarily concentrated along the North Anatolian Fault and the East Anatolian Fault. These regions are characterized by moderate but frequent earthquakes.\nThis spatial distribution explains the differences observed in previous analyses and confirms that global seismic patterns are strongly influenced by specific high-activity regions."
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "",
+    "text": "This study analyzes earthquake activity in Türkiye between 2020 and 2026 using data obtained from AFAD, with a comparative perspective based on global earthquake data from the United States Geological Survey (USGS). The objective is to identify temporal trends and spatial patterns in seismic activity.\nExploratory analysis shows that earthquake magnitudes remain relatively stable over time for both Türkiye and global datasets. In contrast, frequency-based analysis reveals significant variation, particularly in Türkiye, where a noticeable increase in earthquake occurrences is observed after 2023. Spatial analysis demonstrates that high-magnitude earthquakes are concentrated along major tectonic boundaries such as the Pacific Ring of Fire, while Türkiye’s seismic activity is more localized.\nThe findings suggest that earthquake frequency is a more effective metric than magnitude for understanding temporal trends, and that recent changes in Türkiye are primarily driven by regional tectonic dynamics."
+  },
+  {
+    "objectID": "index.html#data-and-preprocessing",
+    "href": "index.html#data-and-preprocessing",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "2. Data and Preprocessing",
+    "text": "2. Data and Preprocessing"
+  },
+  {
+    "objectID": "index.html#dataset-description",
+    "href": "index.html#dataset-description",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "2.2 Dataset Description",
+    "text": "2.2 Dataset Description\nThe dataset contains earthquake records in Türkiye between 2020 and 2026 and includes 124,701 observations and 9 variables. Key variables used in the analysis include magnitude, latitude, longitude, and date."
+  },
+  {
+    "objectID": "index.html#preprocessing-steps",
+    "href": "index.html#preprocessing-steps",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "2.4 Preprocessing Steps",
+    "text": "2.4 Preprocessing Steps\nThe raw data required several preprocessing steps before analysis. The date variable was converted into POSIXct format, and magnitude values were transformed into numeric format. Only earthquakes between 2020 and 2026 were included, and events with magnitude greater than 2 were selected to remove insignificant observations.\nThese steps ensured that the dataset was clean, consistent, and suitable for analysis.\nAfter preprocessing, the final dataset contains 25,668 observations."
+  },
+  {
+    "objectID": "index.html#global-data-integration",
+    "href": "index.html#global-data-integration",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "2.5 Global Data Integration",
+    "text": "2.5 Global Data Integration\nGlobal earthquake data from USGS was standardized and merged with the Türkiye dataset. Both datasets were combined into a single structure with a categorical variable indicating the region (Türkiye or World), allowing direct comparison between regional and global seismic activity."
+  },
+  {
+    "objectID": "index.html#methodological-considerations",
+    "href": "index.html#methodological-considerations",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "3.3 Methodological Considerations",
+    "text": "3.3 Methodological Considerations\nThis study focuses on descriptive and exploratory analysis. Magnitude was found to be limited in identifying temporal trends, while frequency provided more meaningful insights.\nAdvanced modeling techniques such as clustering and spatial analysis could further enhance the understanding of seismic patterns and are recommended for future research."
+  },
+  {
+    "objectID": "index.html#results-interpretation",
+    "href": "index.html#results-interpretation",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "3.4 Results Interpretation",
+    "text": "3.4 Results Interpretation\nThe combined findings from magnitude, frequency, and spatial analysis reveal a coherent pattern.\nMagnitude remains stable over time, while frequency shows significant variation, particularly in Türkiye after 2023. This indicates that changes in seismic activity are not related to earthquake strength but to the number of events.\nSpatial patterns further explain these differences, showing that seismic activity is concentrated in specific regions rather than being uniformly distributed."
+  },
+  {
+    "objectID": "index.html#main-findings",
+    "href": "index.html#main-findings",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "4.1 Main Findings",
+    "text": "4.1 Main Findings\nEarthquake magnitudes remain relatively stable over time, while earthquake frequency varies significantly, particularly in Türkiye after 2023."
+  },
+  {
+    "objectID": "index.html#implications",
+    "href": "index.html#implications",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "4.2 Implications",
+    "text": "4.2 Implications\nFrequency-based analysis provides a more accurate understanding of seismic trends than magnitude. These findings can support improved risk assessment and disaster preparedness strategies."
+  },
+  {
+    "objectID": "index.html#limitations-and-future-work",
+    "href": "index.html#limitations-and-future-work",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "4.3 Limitations and Future Work",
+    "text": "4.3 Limitations and Future Work\nThe study is limited to descriptive analysis. Future work may include advanced modeling techniques such as clustering and predictive analysis to further investigate seismic patterns."
+  },
+  {
+    "objectID": "index.html#conclusion",
+    "href": "index.html#conclusion",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "5. Conclusion",
+    "text": "5. Conclusion\nThis study demonstrates that earthquake frequency, rather than magnitude, is a more effective indicator of temporal changes in seismic activity. The findings show that seismic activity in Türkiye has increased significantly after 2023 due to regional tectonic processes.\nSpatial analysis confirms that global seismic activity is concentrated along major tectonic boundaries, while Türkiye exhibits more localized patterns. Together, these insights provide a comprehensive understanding of earthquake dynamics and highlight the importance of regional analysis in seismic studies."
   }
 ]
