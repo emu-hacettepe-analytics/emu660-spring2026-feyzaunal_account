@@ -153,7 +153,7 @@ combined_data <- bind_rows(deprem_data, world_data)
 
 In this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.
 
-```{r magnitude-bar-clean}
+```{r magnitude-year-mean-ci}
 #| echo: false
 #| warning: false
 #| message: false
@@ -161,19 +161,30 @@ In this section, I perform an initial exploration of the earthquake data by visu
 library(dplyr)
 library(ggplot2)
 
-avg_mag <- combined_data %>%
-  mutate(Year = format(Date, "%Y")) %>%
+yearly_stats <- combined_data %>%
+  mutate(Year = as.integer(format(Date, "%Y"))) %>%
   group_by(Region, Year) %>%
-  summarise(Avg_Magnitude = mean(Magnitude, na.rm = TRUE), .groups = "drop")
+  summarise(
+    n = n(),
+    mean_mag = mean(Magnitude, na.rm = TRUE),
+    sd_mag = sd(Magnitude, na.rm = TRUE),
+    se = sd_mag / sqrt(n),
+    ci = 1.96 * se,
+    .groups = "drop"
+  )
 
-ggplot(avg_mag, aes(x = Year, y = Avg_Magnitude, fill = Region)) +
-  geom_col(position = "dodge") +
+ggplot(yearly_stats, aes(x = Year, y = mean_mag, color = Region, group = Region)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 2) +
+  geom_errorbar(aes(ymin = mean_mag - ci, ymax = mean_mag + ci), width = 0.2, alpha = 0.7) +
+  scale_x_continuous(breaks = 2020:2026) +
   labs(
-    title = "Average Earthquake Magnitude: Türkiye vs World",
+    title = "Average Earthquake Magnitude by Year (with 95% CI)",
     x = "Year",
     y = "Average Magnitude"
   ) +
   theme_minimal()
+```
 ```
 
 ## 3.2 Trend Analysis
