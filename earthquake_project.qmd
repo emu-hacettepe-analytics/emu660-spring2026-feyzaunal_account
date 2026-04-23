@@ -153,21 +153,15 @@ combined_data <- bind_rows(deprem_data, world_data)
 
 In this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.
 
-```{r magnitude-analysis}
+```{r magnitude-overlay}
 #| echo: false
 #| warning: false
 #| message: false
 
 library(ggplot2)
-library(dplyr)
 
-# 🔍 kontrol (isteğe bağlı, debug için)
-print(table(combined_data$Region))
-
-# 🎯 DENSITY + FACET (EN ETKİLİ GÖSTERİM)
 ggplot(combined_data, aes(x = Magnitude, fill = Region)) +
   geom_density(alpha = 0.4) +
-  facet_wrap(~Region, scales = "free_y") +
   labs(
     title = "Magnitude Distribution: Türkiye vs World",
     x = "Magnitude",
