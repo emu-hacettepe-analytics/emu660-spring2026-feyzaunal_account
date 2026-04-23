@@ -25,7 +25,7 @@ https://deprem.afad.gov.tr/event-catalog
 
 ## 2.2 General Information About Data
 
-```{r}
+```{r data-info}
 #| echo: false
 #| message: false
 #| warning: false
@@ -33,7 +33,6 @@ https://deprem.afad.gov.tr/event-catalog
 
 library(readxl)
 
-# sadece ham veri okunur (filtre yok)
 deprem_data_raw <- read_excel("~/Desktop/R/data.xlsx")
 
 cat(
@@ -50,51 +49,40 @@ cat(
 
 Türkiye is a country deeply affected by seismic activities due to its geographical location on major fault lines. The 2023 Kahramanmaraş earthquakes highlighted the importance of data-driven disaster management. I chose this dataset to analyze earthquake patterns using analytical tools and visualizations.
 
+
 ## 2.4 Preprocessing
+
 
 The raw data required several preparation steps before analysis:
 
 - The dataset was imported from an Excel file using the `readxl` library.
-- The `Date` column was converted into `POSIXct` format to enable time-based analysis.
+- The `Date` column was converted into `POSIXct` format.
 - The `Magnitude` column was converted into numeric format.
-- The cleaned dataset was saved as an `.RData` file for reproducibility.
+- Only earthquakes between 2020 and 2026 were included.
+- Only earthquakes with magnitude greater than 3 were included.
 
-- Only earthquakes between 2020 and 2026 were included in the analysis.
-- Only earthquakes with a magnitude greater than 3 were included.
-
-```{r}
-#| label: data-preparation
-#| echo: false
-#| message: false
-#| warning: false
-
+```{r data-preparation}
 library(readxl)
 library(dplyr)
 
 deprem_data <- read_excel("~/Desktop/R/data.xlsx")
 
-deprem_data$Date <- as.POSIXct(
-  deprem_data$Date,
-  format = "%d/%m/%Y %H:%M:%S"
-)
+deprem_data$Date <- as.POSIXct(deprem_data$Date)
 
 deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
-#date filter
+
 deprem_data <- deprem_data %>%
   filter(
     Date >= as.POSIXct("2020-01-01"),
     Date <= as.POSIXct("2026-12-31")
-  )
-# magnitude filter
-deprem_data <- deprem_data %>%
+  ) %>%
   filter(!is.na(Magnitude), Magnitude > 3)
 
 cat("Final dataset contains", nrow(deprem_data), "observations.")
-
-save(deprem_data, file = "deprem_verisi.RData")
 ```
 
 ## 2.5 Global Data
+
 ```{r}
 #| label: global-data
 #| echo: false
