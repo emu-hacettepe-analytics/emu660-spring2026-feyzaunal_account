@@ -54,7 +54,6 @@ Türkiye is a country deeply affected by seismic activities due to its geographi
 
 ## 2.4 Preprocessing
 
-
 The raw data required several preparation steps before analysis:
 
 - The dataset was imported from an Excel file using the `readxl` library.
@@ -67,6 +66,7 @@ The raw data required several preparation steps before analysis:
 #| echo: false
 #| message: false
 #| warning: false
+#| results: hide
 library(readxl)
 library(dplyr)
 
