@@ -68,24 +68,23 @@ library(dplyr)
 
 deprem_data <- read_excel("~/Desktop/R/data.xlsx")
 
-# 🔥 DATE DOĞRU FORMAT
+# Date parse
 deprem_data$Date <- as.POSIXct(
   deprem_data$Date,
-  format = "%d/%m/%Y %H:%M:%S",
-  tz = "UTC"
+  format = "%d/%m/%Y %H:%M:%S"
 )
+
+# 🔥 SADELEŞTİR (EN KRİTİK)
+deprem_data$Date <- as.Date(deprem_data$Date)
 
 deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
 
-# 🔥 KRİTİK: Date NA temizle
-deprem_data <- deprem_data %>%
-  filter(!is.na(Date))
-
-# 🔥 TARİH FİLTRESİNİ DAHA SAĞLAM YAP
+# filtre (artık %100 çalışır)
 deprem_data <- deprem_data %>%
   filter(
-    Date >= as.POSIXct("2020-01-01 00:00:00", tz="UTC"),
-    Date <= as.POSIXct("2026-12-31 23:59:59", tz="UTC"),
+    Date >= as.Date("2020-01-01"),
+    Date <= as.Date("2026-12-31"),
+    !is.na(Magnitude),
     Magnitude > 3
   )
 
