@@ -184,30 +184,43 @@ The combined violin and boxplot visualization provides a detailed view of the di
 
 ## 3.2 Trend Analysis
 
-This section examines how earthquake frequency has changed over time in both Türkiye and globally.
+The frequency analysis provides a clearer understanding of temporal changes in seismic activity compared to magnitude-based metrics. While earthquake magnitudes remain relatively stable over time, the number of earthquake events shows more noticeable variation.
 
-The comparison allows us to determine whether changes in Türkiye are part of a global trend or driven by regional seismic activity.
+The results indicate that global earthquake activity remains relatively consistent across the observed period. In contrast, Türkiye exhibits a significant increase in earthquake frequency, particularly after 2023. This increase is likely associated with major seismic events and aftershock sequences in the region.
+
+These findings suggest that earthquake frequency is a more sensitive indicator of temporal changes in seismic activity, whereas magnitude primarily reflects the physical characteristics of individual events. Therefore, frequency-based analysis offers a more meaningful perspective for understanding recent seismic trends.rison allows us to determine whether changes in Türkiye are part of a global trend or driven by regional seismic activity.
 
 
-```{r trend-analysis}
+```{r frequency-trend}
 #| echo: false
+#| warning: false
+#| message: false
 
 library(dplyr)
 library(ggplot2)
 
-trend_data <- combined_data %>%
-  mutate(Year = format(Date, "%Y")) %>%
+freq_data <- combined_data %>%
+  mutate(Year = as.integer(format(Date, "%Y"))) %>%
   count(Region, Year)
 
-ggplot(trend_data, aes(x = Year, y = n, color = Region, group = Region)) +
-  geom_line(linewidth = 1.2) +
-  geom_point(size = 2) +
+ggplot(freq_data, aes(x = Year, y = n, color = Region, group = Region)) +
+  geom_line(linewidth = 1.3) +
+  geom_point(size = 2.5) +
+  scale_x_continuous(breaks = 2020:2026) +
+  scale_color_manual(values = c("Türkiye" = "#E69F00", "World" = "#0072B2")) +
   labs(
-    title = "Earthquake Trend: Türkiye vs World",
+    title = "Earthquake Frequency Trend (2020–2026)",
+    subtitle = "Comparison between Türkiye and Global Seismic Activity",
     x = "Year",
-    y = "Number of Earthquakes"
+    y = "Number of Earthquakes",
+    color = "Region"
   ) +
-  theme_minimal()
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    legend.position = "top"
+  )
+```
 ```
 
 The comparison shows that global earthquake activity remains relatively stable over time, while Türkiye exhibits a noticeable increase after 2023. This indicates that recent seismic activity in Türkiye is influenced by regional factors rather than global patterns.
