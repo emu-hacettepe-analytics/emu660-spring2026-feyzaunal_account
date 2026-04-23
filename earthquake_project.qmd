@@ -166,6 +166,8 @@ Building on the findings from magnitude analysis, frequency-based analysis provi
 
 The results show that global earthquake activity remains relatively stable across the observed period. In contrast, Türkiye exhibits a noticeable increase in the number of earthquake events, particularly after 2023. This increase is strongly associated with major seismic events and aftershock sequences.
 
+A minor fluctuation in global earthquake frequency is observed around 2025; however, this variation is limited and does not indicate a significant global trend.
+
 This highlights an important distinction: magnitude reflects the physical characteristics of earthquakes, whereas frequency captures variations in seismic activity levels.
 
 The observed increase in Türkiye suggests that recent changes are driven by regional tectonic dynamics rather than global trends. However, frequency alone does not fully explain these changes. Spatial analysis is required to identify the geographic concentration of seismic activity.
