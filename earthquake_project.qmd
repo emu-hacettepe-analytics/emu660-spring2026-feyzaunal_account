@@ -153,28 +153,27 @@ combined_data <- bind_rows(deprem_data, world_data)
 
 In this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.
 
-```{r magnitude-bar}
+```{r magnitude-bar-clean}
 #| echo: false
 #| warning: false
 #| message: false
 
-library(ggplot2)
 library(dplyr)
+library(ggplot2)
 
-# magnitude'ı grupla (bin)
-binned_data <- combined_data %>%
-  mutate(Magnitude_bin = cut(Magnitude, breaks = seq(0, 8, by = 0.5))) %>%
-  count(Region, Magnitude_bin)
+avg_mag <- combined_data %>%
+  mutate(Year = format(Date, "%Y")) %>%
+  group_by(Region, Year) %>%
+  summarise(Avg_Magnitude = mean(Magnitude, na.rm = TRUE), .groups = "drop")
 
-ggplot(binned_data, aes(x = Magnitude_bin, y = n, fill = Region)) +
+ggplot(avg_mag, aes(x = Year, y = Avg_Magnitude, fill = Region)) +
   geom_col(position = "dodge") +
   labs(
-    title = "Magnitude Distribution: Türkiye vs World",
-    x = "Magnitude Range",
-    y = "Count"
+    title = "Average Earthquake Magnitude: Türkiye vs World",
+    x = "Year",
+    y = "Average Magnitude"
   ) +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  theme_minimal()
 ```
 
 ## 3.2 Trend Analysis
