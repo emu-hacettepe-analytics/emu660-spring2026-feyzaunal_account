@@ -92,9 +92,9 @@ deprem_data <- deprem_data %>%
     !is.na(Magnitude),
     Magnitude > 2   # ❗ 3 yerine 2
   )
-
-cat("Final dataset contains", nrow(deprem_data), "observations.\n")
 ```
+After preprocessing, the final dataset contains 25,668 observations.
+
 
 ## 2.5 Global Data
 
