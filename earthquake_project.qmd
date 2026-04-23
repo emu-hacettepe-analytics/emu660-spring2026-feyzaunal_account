@@ -75,6 +75,10 @@ library(lubridate)
 # veriyi oku
 deprem_data <- read_excel("~/Desktop/R/data.xlsx")
 
+print(head(deprem_data))
+print(head(deprem_data$Date))
+str(deprem_data$Date)
+
 # 🔥 DATE DÜZELTME (EN KRİTİK)
 deprem_data$Date <- parse_date_time(
   deprem_data$Date,
@@ -100,8 +104,7 @@ cat("Final dataset contains", nrow(deprem_data), "observations.")
 
 ## 2.5 Global Data
 
-```{r}
-#| label: global-data
+```{r global-data}
 #| echo: false
 #| message: false
 #| warning: false
