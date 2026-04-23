@@ -214,6 +214,41 @@ For the advanced analysis part, I may explore clustering methods such as K-means
 
 Initial findings suggest that seismic activity in Türkiye is concentrated along major fault lines and that earthquake frequency varies across years.
 
+## 3.5 Spatial Analysis
+
+In this section, the spatial distribution of high-magnitude earthquakes is analyzed to identify geographic patterns and potential outliers that influence global seismic activity.
+
+```{r map-outliers}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(maps)
+
+outliers <- combined_data %>%
+  filter(Magnitude >= 6)
+
+ggplot(outliers, aes(x = Longitude, y = Latitude)) +
+  borders("world", colour = "gray70", fill = "gray95") +
+  geom_point(
+    aes(size = Magnitude, color = Region),
+    alpha = 0.7
+  ) +
+  scale_color_manual(values = c("Türkiye" = "#D55E00", "World" = "#0072B2")) +
+  labs(
+    title = "Global Distribution of High-Magnitude Earthquakes (M ≥ 6)",
+    x = "Longitude",
+    y = "Latitude"
+  ) +
+  theme_minimal()
+```
+
+The spatial distribution of high-magnitude earthquakes shows that global seismic activity is concentrated along major tectonic boundaries, particularly in regions such as the Pacific Ring of Fire. These regions experience frequent high-magnitude earthquakes, which act as outliers and significantly influence the overall distribution of global earthquake magnitudes.
+
+In contrast, Türkiye's seismic activity is more localized and primarily concentrated along major fault lines. Earthquakes in Türkiye are generally of moderate magnitude, which explains the differences observed between regional and global magnitude distributions.
+
 # 4. Results and Key Takeaways
 
 The frequency of earthquakes in Türkiye shows a noticeable increase after 2023.

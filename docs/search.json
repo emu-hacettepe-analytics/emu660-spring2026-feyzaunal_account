@@ -292,5 +292,12 @@
     "title": "Earthquake Analysis of Türkiye (2020-2026)",
     "section": "2.5 Global Data",
     "text": "2.5 Global Data\nIn order to compare seismic activity in Türkiye with global trends, earthquake data from the United States Geological Survey (USGS) was used.\nThe global dataset includes earthquake records between 2020 and 2026. Relevant variables such as date, magnitude, latitude, and longitude were extracted and standardized to match the Türkiye dataset.\nAll datasets were combined into a single dataset with an additional variable indicating the region (Türkiye or World)."
+  },
+  {
+    "objectID": "index.html#spatial-analysis",
+    "href": "index.html#spatial-analysis",
+    "title": "Earthquake Analysis of Türkiye (2020-2026)",
+    "section": "3.5 Spatial Analysis",
+    "text": "3.5 Spatial Analysis\nIn this section, the spatial distribution of high-magnitude earthquakes is analyzed to identify geographic patterns and potential outliers that influence global seismic activity.\n\n\n\n\n\n\n\n\n\nThe spatial distribution of high-magnitude earthquakes shows that global seismic activity is concentrated along major tectonic boundaries, particularly in regions such as the Pacific Ring of Fire. These regions experience frequent high-magnitude earthquakes, which act as outliers and significantly influence the overall distribution of global earthquake magnitudes.\nIn contrast, Türkiye’s seismic activity is more localized and primarily concentrated along major fault lines. Earthquakes in Türkiye are generally of moderate magnitude, which explains the differences observed between regional and global magnitude distributions."
   }
 ]
