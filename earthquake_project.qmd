@@ -62,46 +62,35 @@ The raw data required several preparation steps before analysis:
 - The `Magnitude` column was converted into numeric format.
 - Only earthquakes between 2020 and 2026 were included.
 - Only earthquakes with magnitude greater than 3 were included.
-
 ```{r data-preparation}
-#| echo: false
-#| message: false
-#| warning: false
-
 library(readxl)
 library(dplyr)
-library(lubridate)
 
-# 1) Veriyi oku
 deprem_data <- read_excel("~/Desktop/R/data.xlsx")
 
-# 2) Date kolonunu OTOMATİK çözüyoruz (tüm formatları dener)
-deprem_data$Date <- parse_date_time(
+# 🔥 DATE DOĞRU FORMAT
+deprem_data$Date <- as.POSIXct(
   deprem_data$Date,
-  orders = c("dmy HMS","dmy HM","dmy",
-             "ymd HMS","ymd HM","ymd",
-             "mdy HMS","mdy HM","mdy")
+  format = "%d/%m/%Y %H:%M:%S",
+  tz = "UTC"
 )
 
-# 3) Magnitude düzelt
 deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
 
-# 🔥 4) DEBUG (BUNU SİLME ŞİMDİLİK)
-cat("Toplam satır:", nrow(deprem_data), "\n")
-cat("NA Date sayısı:", sum(is.na(deprem_data$Date)), "\n")
+# 🔥 KRİTİK: Date NA temizle
+deprem_data <- deprem_data %>%
+  filter(!is.na(Date))
 
-# 5) Filtre (Date NA olanları atıyoruz)
+# 🔥 TARİH FİLTRESİNİ DAHA SAĞLAM YAP
 deprem_data <- deprem_data %>%
   filter(
-    !is.na(Date),
-    Date >= as.POSIXct("2020-01-01"),
-    Date <= as.POSIXct("2026-12-31"),
-    !is.na(Magnitude),
+    Date >= as.POSIXct("2020-01-01 00:00:00", tz="UTC"),
+    Date <= as.POSIXct("2026-12-31 23:59:59", tz="UTC"),
     Magnitude > 3
   )
 
-# 6) SONUÇ
 cat("Final dataset contains", nrow(deprem_data), "observations.")
+```
 
 ## 2.5 Global Data
 
