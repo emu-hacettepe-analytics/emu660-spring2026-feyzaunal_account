@@ -153,20 +153,21 @@ combined_data <- bind_rows(deprem_data, world_data)
 
 In this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.
 
-```{r}
+```{r magnitude-facet}
 #| echo: false
 #| warning: false
-#| message: false
 
 library(ggplot2)
 
-ggplot(deprem_data, aes(x = Magnitude)) +
-  geom_histogram(binwidth = 0.5, fill = "red", color = "white") +
+ggplot(combined_data, aes(x = Magnitude)) +
+  geom_histogram(binwidth = 0.5, fill = "steelblue", color = "white") +
+  facet_wrap(~Region) +
   labs(
-    title = "Magnitude Distribution of Earthquakes in Türkiye (2020-2026)",
+    title = "Magnitude Distribution: Türkiye vs World",
     x = "Magnitude",
     y = "Count"
-  )
+  ) +
+  theme_minimal()
 ```
 
 ## 3.2 Trend Analysis
