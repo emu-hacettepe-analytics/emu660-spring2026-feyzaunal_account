@@ -104,6 +104,7 @@ The global dataset includes earthquake records between 2020 and 2026. Relevant v
 
 All datasets were combined into a single dataset with an additional variable indicating the region (Türkiye or World).
 
+
 ```{r global-data}
 #| echo: false
 #| message: false
@@ -184,7 +185,7 @@ trend_data <- combined_data %>%
   count(Region, Year)
 
 ggplot(trend_data, aes(x = Year, y = n, color = Region, group = Region)) +
-  geom_line(size = 1.2) +
+  geom_line(linewidth = 1.2) +
   geom_point(size = 2) +
   labs(
     title = "Earthquake Trend: Türkiye vs World",
