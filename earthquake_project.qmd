@@ -69,10 +69,7 @@ library(dplyr)
 
 deprem_data <- read_excel("~/Desktop/R/data.xlsx")
 
-deprem_data$Date <- as.POSIXct(
-  deprem_data$Date,
-  format = "%d/%m/%Y %H:%M:%S"
-)
+deprem_data$Date <- as.POSIXct(deprem_data$Date)
 
 deprem_data$Magnitude <- as.numeric(deprem_data$Magnitude)
 
