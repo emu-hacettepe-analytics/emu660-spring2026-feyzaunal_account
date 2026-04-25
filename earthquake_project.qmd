@@ -57,7 +57,7 @@ deprem_data$Date <- as.POSIXct(
   format = "%d/%m/%Y %H:%M:%S"
 )
 
-# Year çıkar
+# yıl çıkar
 deprem_data$Year <- as.numeric(format(deprem_data$Date, "%Y"))
 
 # Magnitude numeric
@@ -98,7 +98,7 @@ eq2026 <- read_csv("~/Desktop/R/usgs_2026.csv")
 # Birleştir
 world_data <- bind_rows(eq2020, eq2021, eq2022, eq2023, eq2024, eq2025, eq2026)
 
-# 🔥 FORMATLA + FİLTRE (EN DOĞRU HAL)
+# formatla
 world_data <- world_data %>%
   mutate(
     Date = as.POSIXct(time, format = "%Y-%m-%dT%H:%M:%OSZ", tz = "UTC"),
