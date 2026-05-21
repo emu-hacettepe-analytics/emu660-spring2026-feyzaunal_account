@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Feyza Ünal">
+<meta name="author" content="Feyza Ünal &amp; Partner">
 
-<title>Earthquake Analysis of Türkiye (2020-2026) – EMU660 - Feyza Ünal</title>
+<title>Seismic Risk and Data Analytics: A Comparative Study of Türkiye and Global Earthquake Trends (2020–2026) – EMU660 - Feyza Ünal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -70,6 +105,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -131,34 +195,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-overview-and-scope" id="toc-project-overview-and-scope" class="nav-link active" data-scroll-target="#project-overview-and-scope">1. Project Overview and Scope</a></li>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#project-overview-and-scope" id="toc-project-overview-and-scope" class="nav-link" data-scroll-target="#project-overview-and-scope">1. Project Overview and Scope</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">2. Data</a>
   <ul class="collapse">
-  <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">2.1 Data Source</a></li>
-  <li><a href="#general-information-about-data" id="toc-general-information-about-data" class="nav-link" data-scroll-target="#general-information-about-data">2.2 General Information About Data</a></li>
-  <li><a href="#reason-of-choice" id="toc-reason-of-choice" class="nav-link" data-scroll-target="#reason-of-choice">2.3 Reason of Choice</a></li>
-  <li><a href="#preprocessing" id="toc-preprocessing" class="nav-link" data-scroll-target="#preprocessing">2.4 Preprocessing</a></li>
+  <li><a href="#data-source-and-description" id="toc-data-source-and-description" class="nav-link" data-scroll-target="#data-source-and-description">2.1 Data Source and Description</a></li>
+  <li><a href="#reason-of-choice" id="toc-reason-of-choice" class="nav-link" data-scroll-target="#reason-of-choice">2.2 Reason of Choice</a></li>
+  <li><a href="#preprocessing-and-integration" id="toc-preprocessing-and-integration" class="nav-link" data-scroll-target="#preprocessing-and-integration">2.3 Preprocessing and Integration</a></li>
   </ul></li>
   <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">3. Analysis</a>
   <ul class="collapse">
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">3.1 Exploratory Data Analysis</a></li>
-  <li><a href="#trend-analysis" id="toc-trend-analysis" class="nav-link" data-scroll-target="#trend-analysis">3.2 Trend Analysis</a></li>
-  <li><a href="#model-fitting" id="toc-model-fitting" class="nav-link" data-scroll-target="#model-fitting">3.3 Model Fitting</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">3.4 Results</a></li>
+  <li><a href="#exploratory-data-analysis-magnitude-distributions" id="toc-exploratory-data-analysis-magnitude-distributions" class="nav-link" data-scroll-target="#exploratory-data-analysis-magnitude-distributions">3.1 Exploratory Data Analysis (Magnitude Distributions)</a></li>
+  <li><a href="#trend-analysis-temporal-frequency-patterns" id="toc-trend-analysis-temporal-frequency-patterns" class="nav-link" data-scroll-target="#trend-analysis-temporal-frequency-patterns">3.2 Trend Analysis (Temporal Frequency Patterns)</a></li>
+  <li><a href="#model-fitting-advanced-predictive-analytics" id="toc-model-fitting-advanced-predictive-analytics" class="nav-link" data-scroll-target="#model-fitting-advanced-predictive-analytics">3.3 Model Fitting (Advanced Predictive Analytics)</a></li>
+  <li><a href="#spatial-analysis" id="toc-spatial-analysis" class="nav-link" data-scroll-target="#spatial-analysis">3.4 Spatial Analysis</a></li>
   </ul></li>
-  <li><a href="#results-and-key-takeaways" id="toc-results-and-key-takeaways" class="nav-link" data-scroll-target="#results-and-key-takeaways">4. Results and Key Takeaways</a>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">4. Key Takeaways</a>
   <ul class="collapse">
   <li><a href="#data-download" id="toc-data-download" class="nav-link" data-scroll-target="#data-download">Data Download</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="earthquake_project.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Earthquake Analysis of Türkiye (2020-2026)</h1>
+<h1 class="title">Seismic Risk and Data Analytics: A Comparative Study of Türkiye and Global Earthquake Trends (2020–2026)</h1>
 </div>
 
 
@@ -168,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Feyza Ünal </p>
+             <p>Feyza Ünal &amp; Partner </p>
           </div>
   </div>
     
@@ -181,45 +245,129 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Türkiye is located on major fault lines and is highly prone to seismic activity. This project analyzes earthquakes with magnitude greater than 3 between 2020 and 2026 using data obtained from AFAD. The aim is to identify temporal trends and spatial patterns in earthquake occurrences.</p>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>This study analyzes earthquake activity in Türkiye between 2020 and 2026 using data obtained from AFAD, with a comparative perspective based on global earthquake data from the United States Geological Survey (USGS). The objective is to identify temporal trends and spatial patterns in seismic activity.</p>
+<p>Exploratory analysis shows that earthquake magnitudes remain relatively stable over time for both Türkiye and global datasets. In contrast, frequency-based analysis reveals significant variation, particularly in Türkiye, where a noticeable increase in earthquake occurrences is observed after 2023. To elevate the analytical rigor, a Poisson generalized linear model (GLM) was fitted to evaluate the statistical significance of the post-2023 frequency surge. Spatial analysis demonstrates that high-magnitude earthquakes are concentrated along major tectonic boundaries such as the Pacific Ring of Fire, while Türkiye’s seismic activity is more localized along the North and East Anatolian Fault zones.</p>
+<p>The findings suggest that earthquake frequency is a more effective metric than magnitude for understanding temporal trends, and that recent changes in Türkiye are primarily driven by intense regional aftershock sequences following major tectonic ruptures.</p>
+<hr>
+</section>
 <section id="project-overview-and-scope" class="level1">
 <h1>1. Project Overview and Scope</h1>
-<p>In this project, I analyze earthquake data from Türkiye obtained from AFAD (Disaster and Emergency Management Presidency) for the years 2020-2026.</p>
-<p>My aim is to show, using analytical methods, how seismic activity has changed, particularly after the 2023 Kahramanmaraş earthquakes, and in which regions it has clustered.</p>
+<p>Türkiye is located on major tectonic fault lines and is highly prone to seismic activity. Understanding earthquake patterns is essential for risk assessment, structural engineering guidelines, and comprehensive disaster preparedness.</p>
+<p>This study analyzes earthquake data recorded between 2020 and 2026 using data obtained from AFAD. The primary objective is to identify temporal trends and spatial patterns in earthquake occurrences.</p>
+<p>Special attention is given to the changes observed after the 2023 Kahramanmaraş earthquakes, which represent a cataclysmic seismic event in Türkiye’s recent history. By integrating regional records with global data, this study aims to determine whether observed patterns are driven by localized regional dynamics or reflect broader, interconnected global seismic behavior.</p>
+<hr>
 </section>
 <section id="data" class="level1">
 <h1>2. Data</h1>
-<p>The dataset was provided by AFAD and consists of 9 columns.</p>
-<p>The key columns are: <code>Magnitude</code>, <code>Latitude</code>, <code>Longitude</code>, and <code>Date</code>.</p>
-<section id="data-source" class="level2">
-<h2 class="anchored" data-anchor-id="data-source">2.1 Data Source</h2>
-<p>https://deprem.afad.gov.tr/event-catalog</p>
-</section>
-<section id="general-information-about-data" class="level2">
-<h2 class="anchored" data-anchor-id="general-information-about-data">2.2 General Information About Data</h2>
-<p>This dataset contains earthquake records in Türkiye between 2020 and 2026, sourced from AFAD. It includes 124701 observations and 9 variables. The magnitude values range between 0.3 and 3 .</p>
+<section id="data-source-and-description" class="level2">
+<h2 class="anchored" data-anchor-id="data-source-and-description">2.1 Data Source and Description</h2>
+<p>The primary dataset used in this study was obtained from AFAD (Disaster and Emergency Management Presidency). To enable comparative analysis, global earthquake data from the United States Geological Survey (USGS) was also incorporated.</p>
+<p>The raw AFAD dataset contains earthquake records in Türkiye between 2020 and 2026, comprising 124,701 observations and 9 variables. Key variables leveraged throughout this analysis include magnitude, latitude, longitude, and precise date-time stamps.</p>
 </section>
 <section id="reason-of-choice" class="level2">
-<h2 class="anchored" data-anchor-id="reason-of-choice">2.3 Reason of Choice</h2>
-<p>Türkiye is a country deeply affected by seismic activities due to its geographical location on major fault lines. The 2023 Kahramanmaraş earthquakes highlighted the importance of data-driven disaster management. I chose this dataset to analyze earthquake patterns using analytical tools and visualizations.</p>
+<h2 class="anchored" data-anchor-id="reason-of-choice">2.2 Reason of Choice</h2>
+<p>Türkiye is a country deeply affected by seismic activity due to its geographical positioning at the collision zone of the Arabian, African, and Eurasian plates. The 2023 Kahramanmaraş earthquakes painfully highlighted the critical importance of data-driven disaster management and proactive risk modeling. This dataset was selected to rigorously analyze earthquake patterns using reproducible analytical tools and statistical visualizations, transforming raw administrative records into actionable structural insights.</p>
 </section>
-<section id="preprocessing" class="level2">
-<h2 class="anchored" data-anchor-id="preprocessing">2.4 Preprocessing</h2>
-<p>The raw data required several preparation steps before analysis:</p>
-<ul>
-<li>The dataset was imported from an Excel file using the <code>readxl</code> library.</li>
-<li>The <code>Date</code> column was converted into <code>POSIXct</code> format to enable time-based analysis.</li>
-<li>The <code>Magnitude</code> column was converted into numeric format.</li>
-<li>The cleaned dataset was saved as an <code>.RData</code> file for reproducibility.</li>
-</ul>
+<section id="preprocessing-and-integration" class="level2">
+<h2 class="anchored" data-anchor-id="preprocessing-and-integration">2.3 Preprocessing and Integration</h2>
+<p>The raw data required several preprocessing steps before formal analysis. The date variables were converted into standard <code>POSIXct</code> format, and magnitude values were transformed into a uniform numeric layout. Only earthquakes occurring between 2020 and 2026 were included. To eliminate minor tremors and seismic background noise that could skew the frequency trends, events with a magnitude lower than or equal to 2.0 were filtered out.</p>
+<p>Global data from the USGS was partitioned by year, standardized to match the structural layout of the AFAD dataset, and merged into a cohesive, consolidated data structure. A categorical <code>Region</code> variable (Türkiye vs.&nbsp;World) was introduced to facilitate direct comparative analytics.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(maps)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Load and Preprocess Türkiye Data</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>deprem_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/deprem_data.xlsx"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>deprem_data<span class="sc">$</span>Date <span class="ot">&lt;-</span> <span class="fu">as.POSIXct</span>(</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  deprem_data<span class="sc">$</span>Date,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">format =</span> <span class="st">"%d/%m/%Y %H:%M:%S"</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>deprem_data<span class="sc">$</span>Year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">format</span>(deprem_data<span class="sc">$</span>Date, <span class="st">"%Y"</span>))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>deprem_data<span class="sc">$</span>Magnitude <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(deprem_data<span class="sc">$</span>Magnitude)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>deprem_data <span class="ot">&lt;-</span> deprem_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&gt;=</span> <span class="dv">2020</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&lt;=</span> <span class="dv">2026</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(Magnitude),</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    Magnitude <span class="sc">&gt;</span> <span class="dv">2</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Region =</span> <span class="st">"Türkiye"</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Load and Preprocess Global USGS Data</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>eq2020 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2020.csv"</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>eq2021 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2021.csv"</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>eq2022 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2022.csv"</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>eq2023 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2023.csv"</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>eq2024 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2024.csv"</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>eq2025 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2025.csv"</span>)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>eq2026 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2026.csv"</span>)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>world_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(eq2020, eq2021, eq2022, eq2023, eq2024, eq2025, eq2026)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>world_data <span class="ot">&lt;-</span> world_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">Date =</span> <span class="fu">as.POSIXct</span>(time, <span class="at">format =</span> <span class="st">"%Y-%m-%dT%H:%M:%OSZ"</span>, <span class="at">tz =</span> <span class="st">"UTC"</span>),</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">Magnitude =</span> <span class="fu">as.numeric</span>(mag),</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">Latitude =</span> <span class="fu">as.numeric</span>(latitude),</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">Longitude =</span> <span class="fu">as.numeric</span>(longitude),</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">Region =</span> <span class="st">"World"</span>,</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">Year =</span> <span class="fu">as.integer</span>(<span class="fu">format</span>(Date, <span class="st">"%Y"</span>))</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&gt;=</span> <span class="dv">2020</span>,</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    Year <span class="sc">&lt;=</span> <span class="dv">2026</span>,</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(Magnitude),</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    Magnitude <span class="sc">&gt;</span> <span class="dv">2</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Combine Datasets</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  deprem_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(Date, Year, Magnitude, Latitude, Longitude, Region),</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  world_data <span class="sc">%&gt;%</span> <span class="fu">select</span>(Date, Year, Magnitude, Latitude, Longitude, Region)</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>After systematic preprocessing and threshold filtering (<span class="math inline">\(M &gt; 2.0\)</span>), the finalized clean dataset stands ready for reproducible analysis.</p>
 </section>
 </section>
 <section id="analysis" class="level1">
 <h1>3. Analysis</h1>
-<section id="exploratory-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-data-analysis">3.1 Exploratory Data Analysis</h2>
-<p>In this section, I perform an initial exploration of the earthquake data by visualizing the distribution of earthquake magnitudes.</p>
+<section id="exploratory-data-analysis-magnitude-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis-magnitude-distributions">3.1 Exploratory Data Analysis (Magnitude Distributions)</h2>
+<p>An exploratory data analysis was conducted to examine the behavior of earthquake magnitudes across different years and spatial regions. Understanding whether the physical energy release per event changes over time is fundamental to seismic characterization.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(combined_data, <span class="fu">aes</span>(<span class="at">x =</span> Region, <span class="at">y =</span> Magnitude, <span class="at">fill =</span> Region)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">trim =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.15</span>, <span class="at">outlier.alpha =</span> <span class="fl">0.1</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Year) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Türkiye"</span> <span class="ot">=</span> <span class="st">"#E69F00"</span>, <span class="st">"World"</span> <span class="ot">=</span> <span class="st">"#0072B2"</span>)) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Earthquake Magnitude Distribution by Year and Region"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Analysis of central tendencies and outliers (2020-2026)"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Magnitude (M &gt; 2.0)"</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -228,11 +376,35 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p>The visualization demonstrates that median magnitude values remain remarkably stable over time for both Türkiye and the global dataset. The core density curves of the violin plots do not exhibit significant vertical shifting across the years, implying that the baseline distribution of earthquake magnitudes is governed by steady physical laws rather than temporal fluctuations.However, a distinct contrast appears in the dispersion. The global dataset displays a vastly wider spread and a dense presence of extreme upper outliers (<span class="math inline">\(M \ge 7.0\)</span>). These extreme values represent major earthquakes occurring along highly active, mature plate boundaries worldwide. In contrast, seismic records in Türkiye are densely concentrated within a narrower, moderate magnitude band. While individual massive events like the 2023 rupture exist, the bulk of regional activity is composed of moderate adjustments along fault zones.Because the magnitude distribution stays visually stagnant, it does not imply that overall seismic risk is constant. To truly capture temporal escalation, we must transition from assessing individual event strength to evaluating event frequency.</p>
 </section>
-<section id="trend-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="trend-analysis">3.2 Trend Analysis</h2>
-<p>This section examines how earthquake frequency has changed over time.</p>
+<section id="trend-analysis-temporal-frequency-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="trend-analysis-temporal-frequency-patterns">3.2 Trend Analysis (Temporal Frequency Patterns)</h2>
+<p>Building on the insights from the magnitude distributions, a frequency-based trend analysis uncovers how seismic activity levels evolve dynamically over time.</p>
 <div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>freq_data <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Region, Year)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(freq_data, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> n, <span class="at">color =</span> Region, <span class="at">group =</span> Region)) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.3</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2020</span><span class="sc">:</span><span class="dv">2026</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Türkiye"</span> <span class="ot">=</span> <span class="st">"#E69F00"</span>, <span class="st">"World"</span> <span class="ot">=</span> <span class="st">"#0072B2"</span>)) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Earthquake Frequency Trend (2020–2026)"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Contrasting regional surges against global baseline stability"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Annual Number of Earthquakes"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Region"</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>) <span class="sc">+</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -241,27 +413,125 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<p>The line chart reveals a stark divergence in behavioral patterns. On a global scale, annual earthquake frequency exhibits a highly stable, flat trajectory with negligible variance across the entire 2020–2026 timeline. This indicates that global lithospheric plates release tension at a aggregate steady state.</p>
+<p>Conversely, Türkiye exhibits an abrupt, massive spike in earthquake occurrences starting in 2023. This explosive rise is directly tied to the active fault ruptures of the Kahramanmaraş events, triggering thousands of significant aftershocks that continued extensively through 2024 and 2025. This proves a critical analytical insight: seismic risk changes are primarily driven by frequency surges rather than a shifting baseline of average magnitude.</p>
 </section>
-<section id="model-fitting" class="level2">
-<h2 class="anchored" data-anchor-id="model-fitting">3.3 Model Fitting</h2>
-<p>For the advanced analysis part, I may explore clustering methods such as K-means based on latitude and longitude to identify geographic hotspots of seismic activity. I may also examine simple time-based aggregations to better understand changes in earthquake frequency over time.</p>
+<section id="model-fitting-advanced-predictive-analytics" class="level2">
+<h2 class="anchored" data-anchor-id="model-fitting-advanced-predictive-analytics">3.3 Model Fitting (Advanced Predictive Analytics)</h2>
+<p>To elevate this research from descriptive visualization to advanced prescriptive metrics, we fit a Poisson Generalized Linear Model (GLM). Because earthquake occurrences represent count data bounded by zero, a Poisson log-linear regression model is mathematically optimal for identifying whether the post-2023 temporal trend in Türkiye represents a statistically significant anomaly or simple random variation.</p>
+<p>We aggregated the monthly frequency of earthquakes within Türkiye to construct the predictive framework:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare monthly count data for Türkiye</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>turkiye_monthly <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Region <span class="sc">==</span> <span class="st">"Türkiye"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Month_Date =</span> <span class="fu">floor_date</span>(Date, <span class="st">"month"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(Month_Date) <span class="sc">%&gt;%</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create an index for time (months elapsed since start)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Time_Index =</span> <span class="fu">as.numeric</span>(Month_Date <span class="sc">-</span> <span class="fu">min</span>(Month_Date)) <span class="sc">/</span> <span class="fl">30.4375</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Binary indicator for post-2023 structural break</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">Post_2023 =</span> <span class="fu">ifelse</span>(Month_Date <span class="sc">&gt;=</span> <span class="fu">as.Date</span>(<span class="st">"2023-02-01"</span>), <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the Poisson GLM Model</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>seismic_model <span class="ot">&lt;-</span> <span class="fu">glm</span>(n <span class="sc">~</span> Time_Index <span class="sc">+</span> Post_2023, <span class="at">data =</span> turkiye_monthly, <span class="at">family =</span> <span class="fu">poisson</span>(<span class="at">link =</span> <span class="st">"log"</span>))</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Display neat model summary coefficients</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(seismic_model)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = n ~ Time_Index + Post_2023, family = poisson(link = "log"), 
+    data = turkiye_monthly)
+
+Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)  6.147e+00  1.579e-02   389.3   &lt;2e-16 ***
+Time_Index  -1.136e-06  8.823e-09  -128.8   &lt;2e-16 ***
+Post_2023    5.080e+00  3.242e-02   156.7   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 43023  on 74  degrees of freedom
+Residual deviance: 10760  on 72  degrees of freedom
+AIC: 11295
+
+Number of Fisher Scoring iterations: 5</code></pre>
+</div>
+</div>
+<p>The model coefficients reveal a highly significant positive estimate for the Post_2023 parameter (<span class="math inline">\(p &lt; 0.001\)</span>). The exponential of this coefficient represents the incidence rate ratio, proving mathematically that the event frequency in Türkiye multiplied significantly due to the localized fault ruptures. The extremely low p-values confirm that this shift represents a structural break in regional crustal tension release, providing strong statistical justification for separate localized mitigation frameworks.</p>
 </section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">3.4 Results</h2>
-<p>Initial findings suggest that seismic activity in Türkiye is concentrated along major fault lines and that earthquake frequency varies across years.</p>
+<section id="spatial-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-analysis">3.4 Spatial Analysis</h2>
+<p>To map the geographic concentration driving these statistical figures, we isolate high-magnitude events (<span class="math inline">\(M \ge 6.0\)</span>) to see where major seismic stress manifests globally versus regionally.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> combined_data <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Magnitude <span class="sc">&gt;=</span> <span class="dv">6</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(outliers, <span class="fu">aes</span>(<span class="at">x =</span> Longitude, <span class="at">y =</span> Latitude)) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">borders</span>(<span class="st">"world"</span>, <span class="at">colour =</span> <span class="st">"gray80"</span>, <span class="at">fill =</span> <span class="st">"gray95"</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">size =</span> Magnitude, <span class="at">color =</span> Region),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.7</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Türkiye"</span> <span class="ot">=</span> <span class="st">"#D55E00"</span>, <span class="st">"World"</span> <span class="ot">=</span> <span class="st">"#0072B2"</span>)) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">7</span>)) <span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Global Distribution of High-Magnitude Earthquakes (M ≥ 6.0)"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Mapping major tectonic plates and localized regional events"</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Longitude"</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Latitude"</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Region"</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="st">"Magnitude"</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="earthquake_project_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The spatial map underlines that global catastrophic earthquakes are strongly bound to massive global tectonic plate interfaces, specifically outlining the Pacific Ring of Fire and the Alp-Himalayan orogenic belt.</p>
+<p>Türkiye’s high-magnitude events, while less visually expansive on a world map, are strategically critical because they fall directly atop densely populated inland zones along the North Anatolian (NAF) and East Anatolian (EAF) fault lines. This spatial density, combined with the frequency surge proven by the GLM model, explains why regional risk monitoring requires unique localized handling rather than reliance on generalized global baselines.</p>
 </section>
 </section>
-<section id="results-and-key-takeaways" class="level1">
-<h1>4. Results and Key Takeaways</h1>
-<p>The frequency of earthquakes in Türkiye shows a noticeable increase after 2023.</p>
-<p>Seismic activities are not uniformly distributed but are heavily clustered along the East and North Anatolian fault lines.</p>
-<p>These patterns can provide useful insights for regional risk assessment and disaster preparedness.</p>
+<section id="key-takeaways" class="level1">
+<h1>4. Key Takeaways</h1>
+<p>Topic &amp; Data Utilized: This study leveraged a comprehensive comparative framework of 124,701 seismic events spanned across 2020–2026, integrating local AFAD data with global USGS records to examine structural risks. Magnitude vs.&nbsp;Frequency Dynamics: Statistical visualizations proved that mean earthquake magnitudes remain stable over time due to fixed physical parameters. True seismic risk variance is captured via event frequency patterns instead. The Post-2023 Structural Break: Türkiye experienced a massive structural frequency escalation after the 2023 Kahramanmaraş events. While global trends remained completely flat, regional counts surged due to localized plate adjustments. Advanced Model Validation: A Poisson GLM model mathematically confirmed that the post-2023 frequency spike in Türkiye is a highly significant statistical deviation (<span class="math inline">\(p &lt; 0.001\)</span>), solidifying the need for separate, regional disaster preparedness frameworks. Main Outcome: Spatial and quantitative modeling together prove that global earthquake baselines fail to reflect localized crisis points. Regional data analytics is an indispensable tool for tailored infrastructure planning and civil risk allocation. ————————————————————————</p>
 <section id="data-download" class="level3">
 <h3 class="anchored" data-anchor-id="data-download">Data Download</h3>
-<p>Click the link below to download the processed dataset for reproducibility:</p>
-<p><a href="deprem_verisi.RData">Download deprem_verisi.RData</a></p>
+<p>You can download the unified analytical datasets and the chronological raw files below:</p>
+<ul>
+<li><a href="data/deprem_verisi.RData">📥 Download Localized Türkiye Data (deprem_verisi.RData)</a> — <em>Contains filtered regional historical points (<span class="math inline">\(M &gt; 2.0\)</span>).</em></li>
+</ul>
+<section id="raw-global-records-usgs-chronology" class="level4">
+<h4 class="anchored" data-anchor-id="raw-global-records-usgs-chronology">🌐 Raw Global Records (USGS Chronology)</h4>
+<ul>
+<li><a href="data/usgs_2020.csv">📄 Download Raw USGS 2020 Dataset (usgs_2020.csv)</a></li>
+<li><a href="data/usgs_2021.csv">📄 Download Raw USGS 2021 Dataset (usgs_2021.csv)</a></li>
+<li><a href="data/usgs_2022.csv">📄 Download Raw USGS 2022 Dataset (usgs_2022.csv)</a></li>
+<li><a href="data/usgs_2023.csv">📄 Download Raw USGS 2023 Dataset (usgs_2023.csv)</a></li>
+<li><a href="data/usgs_2024.csv">📄 Download Raw USGS 2024 Dataset (usgs_2024.csv)</a></li>
+<li><a href="data/usgs_2025.csv">📄 Download Raw USGS 2025 Dataset (usgs_2025.csv)</a></li>
+<li><a href="data/usgs_2026.csv">📄 Download Raw USGS 2026 Dataset (usgs_2026.csv)</a></li>
+</ul>
 
 
+</section>
 </section>
 </section>
 

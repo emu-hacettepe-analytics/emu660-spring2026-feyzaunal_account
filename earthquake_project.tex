@@ -195,7 +195,7 @@
 \urlstyle{same}
 \hypersetup{
   pdftitle={Seismic Risk and Data Analytics: A Comparative Study of Türkiye and Global Earthquake Trends (2020--2026)},
-  pdfauthor={Feyza ÜNAL \& Partner},
+  pdfauthor={Feyza Ünal \& Partner},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -206,7 +206,7 @@
 
 \title{Seismic Risk and Data Analytics: A Comparative Study of Türkiye
 and Global Earthquake Trends (2020--2026)}
-\author{Feyza ÜNAL \& Partner}
+\author{Feyza Ünal \& Partner}
 \date{}
 \begin{document}
 \maketitle
@@ -305,6 +305,7 @@ analytics.
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(here)}
 \FunctionTok{library}\NormalTok{(readxl)}
 \FunctionTok{library}\NormalTok{(dplyr)}
 \FunctionTok{library}\NormalTok{(readr)}
@@ -314,8 +315,7 @@ analytics.
 
 
 \CommentTok{\# 1. Load and Preprocess Türkiye Data}
-\NormalTok{deprem\_data }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"/Users/ihsanyigitunal/Documents/earthquake\_project/data/deprem\_verisi.xlsx"}\NormalTok{)}
-
+\NormalTok{deprem\_data }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"/Users/ihsanyigitunal/Documents/earthquake\_project/data/deprem\_data.xlsx"}\NormalTok{)}
 \NormalTok{deprem\_data}\SpecialCharTok{$}\NormalTok{Date }\OtherTok{\textless{}{-}} \FunctionTok{as.POSIXct}\NormalTok{(}
 \NormalTok{  deprem\_data}\SpecialCharTok{$}\NormalTok{Date,}
   \AttributeTok{format =} \StringTok{"\%d/\%m/\%Y \%H:\%M:\%S"}
