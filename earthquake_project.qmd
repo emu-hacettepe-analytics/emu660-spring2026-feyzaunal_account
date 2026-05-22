@@ -279,7 +279,7 @@ Main Outcome: Spatial and quantitative modeling together prove that global earth
 ### Data Download
 You can download the unified analytical datasets and the chronological raw files below:
 
-*   [Download Localized Türkiye Data (deprem_verisi.RData)](https://github.com/emu-hacettepe-analytics/emu660-spring2026-feyzaunal_account/raw/main/deprem_verisi.RData) — *Contains filtered regional historical points ($M > 2.0$).*
+*   [Download Localized Türkiye Data (deprem_verisi.RData)](https://github.com/emu-hacettepe-analytics/emu660-spring2026-feyzaunal_account/raw/main/deprem_verisi.RData) — *Contains filtered regional historical points (M > 2.0).*
 
 *   [Download Raw USGS 2020 Dataset (usgs_2020.csv)](https://github.com/emu-hacettepe-analytics/emu660-spring2026-feyzaunal_account/raw/main/data/usgs_2020.csv)
 *   [Download Raw USGS 2021 Dataset (usgs_2021.csv)](https://github.com/emu-hacettepe-analytics/emu660-spring2026-feyzaunal_account/raw/main/data/usgs_2021.csv)
