@@ -68,7 +68,7 @@ library(maps)
 
 
 # 1. Load and Preprocess Türkiye Data
-deprem_data <- read_excel("/Users/ihsanyigitunal/Documents/earthquake_project/data/deprem_data.xlsx")
+deprem_data <- read_excel("data/deprem_data.xlsx")
 deprem_data$Date <- as.POSIXct(
   deprem_data$Date,
   format = "%d/%m/%Y %H:%M:%S"
