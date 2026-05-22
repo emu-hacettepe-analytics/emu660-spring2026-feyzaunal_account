@@ -306,13 +306,13 @@ window.Quarto = {
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Region =</span> <span class="st">"Türkiye"</span>)</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Load and Preprocess Global USGS Data</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>eq2020 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2020.csv"</span>)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>eq2021 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2021.csv"</span>)</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>eq2022 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2022.csv"</span>)</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>eq2023 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2023.csv"</span>)</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>eq2024 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2024.csv"</span>)</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>eq2025 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2025.csv"</span>)</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>eq2026 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/ihsanyigitunal/Documents/earthquake_project/data/usgs_2026.csv"</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>eq2020 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/usgs_2020.csv"</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>eq2021 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/usgs_2021.csv"</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>eq2022 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/usgs_2022.csv"</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>eq2023 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/usgs_2023.csv"</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>eq2024 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/usgs_2024.csv"</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>eq2025 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/usgs_2025.csv"</span>)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>eq2026 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/usgs_2026.csv"</span>)</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>world_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(eq2020, eq2021, eq2022, eq2023, eq2024, eq2025, eq2026)</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
