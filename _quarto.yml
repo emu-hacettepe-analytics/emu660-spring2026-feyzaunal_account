@@ -12,7 +12,7 @@ website:
         text: About
       - href: assignments.qmd
         text: Assignments
-      - href: project.qmd
+      - href: earthquake_project.html
         text: Project
     right:
       - icon: linkedin
