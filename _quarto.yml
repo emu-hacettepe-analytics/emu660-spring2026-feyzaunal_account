@@ -6,7 +6,7 @@ website:
   title: "EMU660 - Feyza Ünal"
   navbar:
     left:
-      - href: index.qmd
+      - href: earthquake_project.html
         text: Home
       - href: about.qmd
         text: About
